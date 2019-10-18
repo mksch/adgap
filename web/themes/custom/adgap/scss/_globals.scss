@@ -1,0 +1,61 @@
+/* globals */
+
+// ags colors
+$yellow: #fdbb30;
+$bright-green: #82bc00;
+$teal-green: #006272;
+$red: #d70036;
+
+$green: #78BE20;
+$white: #FFFFFF;
+$grey: #CECECE;
+$light-grey: #F5F5F5;
+$mid-grey: darken($light-grey, 5%);
+$shadow-color: #CECECE;
+
+$teal: #006272; // ADGAP Teal
+
+// hia colors
+
+$purple: rgb(83,47,92);
+$purple-mid: rgb(213,198,213);
+$purple-light: rgb(235,226,238);
+
+// AGS Blues
+//$blue:rgb(0,55,100);
+//$blue-light: rgb(222,225,235);
+//$blue-mid: rgb(180,195,217);
+//$blue-slide: #b7c7ea;
+
+// ADGAP blues
+//#0073CE // ADGAP blue
+$blue:rgb(0,113,206);
+$blue-light: rgb(223,236,246);
+$blue-mid: rgb(204,227,244);
+
+$orange: #d25d12;
+$orange-mid: rgb(238,195,167);
+$orange-light: rgb(249,233,222);
+
+$back-color: $white;
+
+$menu-background: $blue;
+$menu-drop-back: $light-grey;
+
+$menu-color: $white;
+$menu-hover-color: $orange;
+$menu-hover-background: $menu-drop-back;
+
+
+$pop-color: $orange;
+
+$font-color: #222222;
+$main-color: $blue;
+$accent-color: $teal;
+
+$button-radius: 7px;
+
+$text-width-large: 100%;
+$text-width-medium: 100%;
+
+$menu-height: 50px;

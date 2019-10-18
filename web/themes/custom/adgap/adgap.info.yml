@@ -1,0 +1,36 @@
+name: adgap
+description: Theme for ADGAP - American Geriatrics Society
+type: theme
+core: 8.x
+
+libraries:
+-  adgap/global-styling
+-  adgap/global-js
+
+ckeditor_stylesheets:
+- lib/font-awesome/css/font-awesome.min.css
+- css/app.css
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+  utility_links: 'Top Right Header Links'
+  secondary_menu: 'Secondary Menu'
+  breadcrumb: 'Breadcrumb'
+  title_area: 'Page Title Area'
+  content: 'Content'
+  related_links: 'Related Resources'
+  banner: 'Home Page Slides'
+  highlights: 'Home Page Highlights'
+  callouts: 'Home Page Callouts'
+  home_blocks_1: 'Home Blocks Column 1'
+  home_blocks_2: 'Home Blocks Column 2'
+  home_blocks_3: 'Home Blocks Column 3'
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  social_media: 'Social Media Bar'
+  footer: 'Footer'
+  footer_left:  'Footer Left Column'
+  footer_map_1:  'Footer Site Map Column 1'
+  footer_map_2:  'Footer Site Map Column 2'
+  footer_map_3:  'Footer Site Map Column 3'

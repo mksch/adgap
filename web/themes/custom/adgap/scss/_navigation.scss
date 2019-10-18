@@ -1,0 +1,539 @@
+/***
+	NAVIGATION
+***/
+.main-menu-wrapper {
+	display: block;
+  -webkit-transform: translateZ(0);
+}
+ul.menu .mobile-toggle,
+ul.menu .crumb-toggle,
+ul.menu .sub-toggle {
+	  position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: 99;
+    cursor: pointer;
+    color: $white;
+	   &::before {
+			content: "\f13a";
+			color: $orange;
+	    font-family: fontawesome;
+	    font-size: 1.4rem;
+	    position: absolute;
+	    top: 2px;
+	    right: 3px;
+	  	}
+		  &.menu-open::before {
+				content: "\f139";
+		  }
+}
+@include breakpoint(small medium) {
+	ul.menu .sub-toggle:hover::before {
+		@include transform(scale(1.2));
+	}
+	ul.menu .sub-toggle::before,
+	ul.menu .mobile-toggle::before {
+		font-size:1.7rem;
+	}
+}
+
+.title-bar {
+	background-color: $blue;
+	margin-top: 5px;
+	width: 100%;
+}
+
+.no-js {
+	.region-primary_menu {
+		ul.level0 {
+			@include menu-visible();
+		}
+	}
+	.region-sidebar_first nav .menu.nested {
+		@include menu-visible();
+	}
+}
+
+
+/* styles for all menus in the primary menu */
+.region-primary_menu {
+	background-color: $blue;
+	position: relative;
+	ul.menu {
+// 		@include transition(all .7s ease-out);
+ 		@include transform(translate3d(0,0,0));
+    transition-delay: 0s;
+		li {
+			width: 100%;
+			display: block;
+			position: relative;
+		}
+		a {
+			color: $white;
+			padding-right: 80px;
+		}
+		a:hover {
+			color: $accent-color;
+		}
+	}
+	
+	.main-nav {
+		position: relative;
+		z-index: 100;
+		ul.menu .sub-toggle {
+			width: 50px;
+			height: 48px;
+			margin-right: 5px;
+			&::before {
+				color: $white;
+				right: 20px;
+				top: 2px;
+			}
+		}
+	}
+	/* only the top menu styles */
+	
+	.main-nav ul.menu.level0 {
+		position: absolute;
+		background-color: $blue;
+ 		@include menu-hide();
+		width: 100%;
+		&.menu-open {
+			@include menu-visible();
+		 	@include transition(all .4s ease-in);
+		 	@include transform(translate3d(0,0,0));
+		 	transition-delay: 0s;
+		}
+		li {
+			width: 100%;
+			display: block;
+			border-top: 1px solid $white;
+		}
+		> li a {
+			font-size: 1.1rem;
+			padding: .9rem .8rem;
+			display:block;
+		}
+		> li:hover {
+			background-color: lighten($blue, 10%);
+			color: $white;
+			@include transition(background-color .7s ease-out);
+		}
+		> li.menu-item--active-trail > a {
+			color: $orange;
+			position: relative;
+		}
+	}
+	
+	.main-nav ul.submenu {
+		margin-left: 0;
+		background-color: $grey;
+		z-index: 90;
+		li {
+			padding: 0px 10px 0px 30px;
+		}
+		li a {
+			color: $font-color;
+		}
+		li:hover a {
+			color: $accent-color;
+		}
+		@include menu-hide;
+		&.menu-open {
+			@include menu-visible;
+		}
+	}
+	.dropmenu {
+		h2 {
+		  display:none;
+		  width: 50%;
+		  padding-bottom: 3px;
+		  border-bottom: 1px solid $font-color;
+		}
+	}
+	.dropmenu.menu-open > ul.submenu {
+			@include menu-visible;
+		 	@include transition(all .4s ease-in);
+		 	@include transform(translate3d(0,0,0));
+		 	transition-delay: 0s;
+	}
+	.main-nav ul.menu a:hover .dropmenu {
+		position: relative;
+	  background: $menu-background;
+	  width: 100%;
+	  z-index: 99;
+	  overflow: hidden;
+	}
+}
+
+.no-js {
+  @include breakpoint(small only) {
+    .main-menu-wrapper {
+      display: none;
+    }
+  }
+}
+.no-js {
+/*
+	.main-menu-wrapper {
+		display:none;
+	}
+*/
+	.region-primary_menu .main-nav {
+		ul.level0 {
+ 			@include menu-visible();
+		}
+	}
+}
+
+/**
+	FOR LARGE
+**/
+
+@include breakpoint(large) {
+.title-bar {
+	display: none;
+}
+.region-primary_menu {
+	z-index: 500;
+	.main-nav ul.menu {
+		height: $menu-height;
+		width: auto;
+		> li {
+			position: inherit;
+			width: auto;
+			display: inline-block;
+			min-height: $menu-height;
+			border-top: none;
+			float: left;
+		}
+		> li > a {
+			padding: .4rem 1rem;
+			text-transform: uppercase;
+// 			max-width: 170px;
+			line-height: 1.2;
+			vertical-align: middle;
+			height: $menu-height;
+			letter-spacing: .1rem;
+			font-size: .9rem !important;
+		}
+	}
+	.main-nav ul.menu.level0 {
+		position: inherit;
+//		display: table;
+		width: 100%;
+		@include menu-visible();
+		margin-bottom: 0 !important;
+		> li {
+			width: auto;
+//			display: table-cell;
+//			float: none;
+			border-left: 1px solid $white;
+			border-top: none;
+			&:last-child {
+				border-right: 1px solid $white;
+			}
+
+			> a {
+				position: relative;
+				color: $white !important;
+				padding: 0 .6rem;
+				text-align: center;
+				width: 100%;
+				line-height: $menu-height;
+				height: auto;
+				display: inline-block;
+			}
+			&.menu-item--active-trail > a::before {
+					@include css-triangle(10px, $white, down);
+					@include horizontal-center();
+					top: -2px;
+			}
+		}
+		li.hovering .dropmenu,
+		li.hovering .dropmenu h2,
+		li.hovering .dropmenu ul {
+			@include menu-visible;
+		 	@include transition(all .4s ease-in);
+		 	@include transform(translate3d(0,0,0));
+		 	transition-delay: 0s;
+		}
+		li.hovering h2 {
+			display: block;
+		}
+		.submenu {
+			background-color: $light-grey;
+			li {
+				display: block;
+				border-top: none;
+				padding: 0px 10px;
+			}
+			&.level-1 > li::before {
+		    content: "\f054";
+	      font-family: fontawesome;
+	      color: $font-color;
+			}
+			a {
+				color: $font-color;
+			}
+			a:hover {
+				color: $accent-color;
+			}
+		}
+	}
+	.dropmenu {
+    position: absolute;
+    left: 0;
+    top: $menu-height;
+    width: 100%;
+    padding: 40px;
+    margin-top: 0px;
+    @include box-shadow(2px, 2px, 2px, 0px, rgba(0,0,0,.3) );
+    background-color: $menu-drop-back;
+    $color: $blue;
+    @include menu-hide();
+    overflow: visible;
+    h2 {
+	    font-size: 1.2rem;
+    }
+	}
+	ul.menu .sub-toggle {
+		display:none;
+	}	
+}
+
+}
+// override the padding for a small subset of the window until it transitions to medium screen width
+@media screen and (min-width: 1085px) {
+	.main-nav ul.menu.level0 > li > a {
+			padding: 0 1rem !important;	
+	}	
+}
+/**
+	FOR drop down breadcrumbs
+**/
+@include breakpoint(small only) {
+	ul.crumb-down .mobile-toggle{
+		width: 50px;
+		height: 39px;
+		&::before {
+			right: 11px;
+			top: 0px;
+		}
+		&:hover {
+		background-color: darken($light-grey, 5%);
+		}
+	}
+}
+
+ul.crumb-down {
+	margin-top: 5px;
+	float: left;
+	background-color: $light-grey;
+	border-bottom: 1px solid darken($light-grey,20%);
+	@include rounded(3px);
+	> li {
+		width: 100%;
+		max-width: 600px;
+		display: block;
+		position: relative;
+		float: left;
+		margin-bottom: 1px;
+		border-bottom: 1px solid $white;
+		&:last-child {
+			border-right: none;
+		}
+	}
+	> li > a {
+			font-size: 1.1rem;
+			padding: .7rem .7rem;
+			display: block;
+			line-height: 1.1rem;
+			&.is-active {
+				font-weight: bold;
+				color: $font-color;
+			}
+	}
+	> li.drop-down > .mobile-toggle,
+	> li.drop-down > .crumb-toggle {
+		content: "\f13a";
+    color: $orange;
+    top: 0px;
+    right: 0px;
+  }
+	> li.drop-down > .crumb-toggle {
+		display: none;
+	}
+	> li.drop-down > a {
+		padding-right: 2rem;
+	}
+		li.drop-down ul {
+		position: relative;
+		background-color: $light-grey;
+		width: 100%;
+		overflow: visible;
+		float: left;
+		display: block;
+		margin: 0;
+	 	@include transition(all .4s ease-out);
+	 	@include transform(translate3d(0,0,0));
+	 	transition-delay: 0s;
+		@include menu-hide;
+		&.menu-open {
+			@include menu-visible;
+			background-color: $grey;
+			z-index: 99;
+		}
+		li {
+			display: block;
+			float: left;
+			width: 100%;
+			float: left;
+			border-bottom: 2px solid $white;
+			padding-left: 20px;
+			&:last-child {
+				border-bottom: none;
+			}
+			a {
+				padding: .4rem .5rem;
+				color: $blue;
+				width: 100%;
+				display: block;
+			}
+			a:hover {
+				color: $orange;
+			}
+			&.is-active a,
+			a.is-active {
+				font-weight: bold;
+				color: $font-color;
+			}
+			span.arrow {
+				float: left;
+				width: 20px;
+				content: "#";
+			}
+		}
+	}
+}
+
+
+
+
+
+@include breakpoint(small only) {
+
+.no-js {
+	ul.crumb-down {
+		li.drop-down ul {
+ 			@include menu-visible();
+			background-color: $grey;
+			max-width: none;
+			&li:first-child {
+				border-top: 2px solid white;
+			}
+		}
+	}
+}
+	
+}
+
+@include breakpoint(medium) {
+	ul.crumb-down {
+		-webkit-backface-visibility: hidden;
+		margin-top: 20px;
+		z-index: 999;
+		> li {
+			width: auto;
+			display: inline-block;
+			border-bottom: none;
+			border-left: none;
+			border-right: 2px solid $orange;
+		}
+		> li > a {
+		 	padding: .8rem 1.6rem;
+		 	font-size: normal;
+		}
+		> li.drop-down > a {
+			padding-right: 2.8rem;
+		}
+/*
+		> li.drop-down > .sub-toggle {
+	    top: 1px;
+	    right: 10px;
+	  }
+*/
+	  > li.drop-down > .mobile-toggle {
+		  display:none;
+	  }
+		> li.drop-down > .crumb-toggle {
+	    top: 3px;
+	    right: 10px;
+	    display:block;
+	  }
+	  > li.drop-down.open > .crumb-toggle::before,
+		> li.drop-down[hover=on]:hover > .crumb-toggle::before {
+			content: "\f139";
+		}
+		li.drop-down.open,
+		li.drop-down:focus,
+		li.drop-down[hover=on]:hover {
+			ul {
+				@include menu-visible;
+ 				@include transition(all .25s ease-in);
+		 		@include transform(translate3d(0,0,0));
+		 		transition-delay: 0s;
+				max-width: none; 
+				z-index: 99;
+			}
+		}
+		li.drop-down ul {
+			@include box-shadow(2px, 2px, 2px, 0px, rgba(0,0,0,.3) );
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			margin-left: 0px;
+			width: 400px;
+			max-width: 0px;
+			overflow: visible;
+			@include box-shadow(2px, 2px, 2px, 0px, rgba(0,0,0,.3) );
+   		@include menu-slide-in;
+			@include menu-hide;
+			li {
+				padding-left: 0;
+				a {
+					border-right: 3px solid transparent !important;
+				}
+			  a:hover {
+					border-right: 3px solid $orange;
+				}
+			}
+		}
+	}
+}
+
+/***
+* pager
+***/
+
+ul.js-pager__items {
+	list-style-type: none !important;
+	li {
+		margin: 0px 5px;
+		display: inline-block;
+	}
+	@include breakpoint(medium) {
+		.pager__item--next,
+		.pager__item--previous {
+			display: inline-block !important;
+		}
+	}
+	@include breakpoint(small only) {
+		.pager__item--next,
+		.pager__item--previous {
+			display: none !important;
+		}
+	}
+}
+

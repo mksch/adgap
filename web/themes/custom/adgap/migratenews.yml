@@ -1,0 +1,60 @@
+uuid: 8e9d4db8-52c7-4831-ad8f-2633866d9695
+langcode: en
+status: true
+dependencies: {  }
+id: my_rss_importer
+migration_tags: null
+migration_group: null
+label: 'Import my RSS feed'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  urls: 'http://local.agslive.com/media/feed'
+  data_parser_plugin: simple_xml
+  item_selector: /rss/channel/item
+  fields:
+    -
+      name: guid
+      label: GUID
+      selector: guid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: pub_date
+      label: 'Publication date'
+      selector: pubDate
+    -
+      name: link
+      label: 'Origin link'
+      selector: link
+    -
+      name: description
+      label: Description
+      selector: description
+    -
+      name: creator
+      label: Creator
+      selector: 'dc:creator'
+  ids:
+    guid:
+      type: string
+process:
+  title: title
+  field_remote_url: link
+  body: description
+  created:
+    plugin: format_date
+    from_format: 'D, d M Y H:i:s O'
+    to_format: U
+    source: pub_date
+  status:
+    plugin: default_value
+    default_value: 1
+  type:
+    plugin: default_value
+    default_value: press_release
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

@@ -1,0 +1,67 @@
+@media print {
+	#block-printbutton,
+	#block-footerhoncode--2,
+	.fm-col-2,
+	.fm-col-3,
+	aside .sidebar,
+	.views-exposed-form,
+	#block-addtoanybuttons {
+		display: none;
+	}
+
+	header[role="banner"] {
+		height: auto !important;
+		float: left;
+	}
+	.ac-content {
+		display: block !important;
+		max-height: none !important;
+	}
+	.main-banner,
+	#block-sitebranding {
+		width: 100% !important;
+		float: left;
+	}
+	.hia-form ul,
+	#block-hia-content ul,
+	.ac-content ul,
+	ul.square-bullet-list {
+		list-style-type: square !important;
+		li::before {
+			background-color: transparent;
+		}
+	}
+	ul.links-list {
+		list-style-type: none !important;
+	}
+	.sticky {
+		position: relative !important;
+	}
+
+	.drug-category {
+		.wrapper {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		.drug-header {
+			h2.back-blue {
+				border-bottom: 1px solid #000000;
+				background-color: red !important;
+			}
+		}
+		.drug-area {
+			p {
+				margin-bottom: 0;
+			}
+			li {
+				margin: 0;
+			}
+		}
+	}
+		/*
+	* Blog specific 
+	*/
+	.addtoany_content {
+		display: none;
+	}
+}

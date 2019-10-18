@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph:
+
+ *
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   - id: The paragraph ID.
+ *   - bundle: The type of the paragraph, for example, "image" or "text".
+ *   - authorid: The user ID of the paragraph author.
+ *   - createdtime: Formatted creation date. Preprocess functions can
+ *     reformat it by calling format_date() with the desired parameters on
+ *     $variables['paragraph']->getCreatedTime().
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ *
+ * ---- HIA ----:
+ *
+ * This is a full window width paragraph used on Hero pages.
+ * Each section can have a background color that extends the width of the full browser window.
+ * variables:
+ * - full_background_color: The background color of the section
+ * - top_padding, bottom_padding: padding for top/bottom of the section
+ * - page_grid: set in a preprocess function, sets the (Foundation) grid for the page content used on this site.
+ */
+#}
+
+{# Renders Background field. #}
+{% if content.field_full_background_color|render %}
+    {% set background_settings = 'back_' ~ content.field_full_background_color['0']['#markup'] %}
+{% endif %}
+
+
+{% if content.field_top_padding|render %}
+    {% set padding_settings = 'pad_' ~ content.field_top_padding['0']['#markup'] %}
+{% endif %}
+{% if content.field_bottom_padding|render %}
+    {% set b_padding_settings = 'b_pad_' ~ content.field_bottom_padding['0']['#markup'] %}
+{% endif %}
+
+
+
+{%
+set wrapperClasses = [
+	'edge-to-edge', 
+	background_settings|clean_class,
+]
+%}
+
+{# data-equalizer is from foundation and makes columns the same height #}
+{# Prints div with classes, and content without Width and Background. #}
+<section{{ attributes.addClass(wrapperClasses) }}>
+	<div class="row">
+	  <div class="{{page_grid}}">
+	    {{ content|without('field_full_background_color', 'field_top_padding', 'field_bottom_padding') }}
+	  </div>
+	</div>
+</section>

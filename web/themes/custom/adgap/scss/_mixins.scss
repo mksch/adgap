@@ -1,0 +1,187 @@
+// @import "../lib/foundation/scss/util/_mixins.scss";
+@import "../lib/font-awesome/scss/_mixins.scss";
+@import "../lib/font-awesome/scss/_variables.scss";
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin rounded($radius: 0.5em) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+border-radius: $radius;
+}
+@mixin rounded-top($radius: 0.5em) {
+-webkit-border-radius: $radius $radius 0 0;
+-moz-border-radius: $radius $radius 0 0;
+border-radius: $radius $radius 0 0;
+}
+@mixin rounded-bottom($radius: 0.5em) {
+-webkit-border-radius: 0 0$radius $radius;
+-moz-border-radius: 0 0$radius $radius;
+border-radius: 0 0$radius $radius;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transition: $args;
+  transform: $args;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin rounded-chevron($font-size: 1rem, $color: #CCCCCC) {
+	position: relative;
+	padding-left: $font-size*1.2;
+	&::before {
+		@include fa-icon(); 
+		content: $fa-var-chevron-circle-right;
+		left: 4px;
+		@include vertical-center;
+		font-size: $font-size;
+		margin-right: 5px;
+		text-align: center;
+		color: $color;
+	}
+		&:hover::before {
+		  color: $blue;
+		  color: rgba( $color, .7);
+	}
+}
+@mixin button($color: #000000, $background: transparent) {
+	color: $color;
+	text-decoration: none;
+	background-color: $background;
+	border: 2px solid $orange;	
+	padding: 6px 10px 8px 10px;
+	@include rounded(3px);
+	@include transition(all 0.25s ease-out);
+  &:hover {
+	  background-color: darken($background, 3%);
+	  color: $color;
+	  border-color: rgba( $orange, .7 );
+  }
+}
+@mixin solid-button($background: $orange, $color: $blue) {
+	background-color: $background !important;
+	color: $color !important;
+	display: block;
+	width: auto;
+	float: left;
+	@include rounded($button-radius);
+	padding: 5px 15px;
+	text-align: center;
+	letter-spacing: .1em;
+	position: relative;
+	text-decoration: none;
+	@include transition(all .25s ease-in-out);
+	&:hover {
+		background-color: rgba( $background, .9 ) !important;
+	}
+}
+@mixin menu-visible () {
+	visibility: visible;
+	max-height: 1200px;
+  opacity: 1;
+}
+/*
+* took out transition below because was causing menu sizing issues when changing screen size due to delay.
+*/
+
+@mixin menu-hide() {
+	visibility: hidden;
+	max-height: 0;
+	opacity: 0;
+/*
+ 	@include transition(all .25s ease-in-out);
+ 	transition-delay: 0s;
+*/
+}
+
+@mixin menu-slide-in() {
+		@include transform(translate3d(0,-20px,0));
+		@include transition(opacity .15s,visibility .15s,height .15s);
+		@include transition(transform .4s cubic-bezier(.55,.085,0,.99));	
+}
+
+@mixin box-shadow($horizontal: 0px, $vertical: 1px, $blur: 2px, $spread: 0px, $color: #CCC) {
+  -webkit-box-shadow: $horizontal $vertical $blur $color;
+  -moz-box-shadow: $horizontal $vertical $blur $color;
+  box-shadow: $horizontal $vertical $blur $color;
+}
+
+@mixin search-icon {
+	content: "\f002";
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: inherit;
+	color: $blue;
+}
+@mixin clear-list-background {
+	&::before {
+		background-color: transparent;
+		content: '';
+		width: 0 !important;
+		height: 0 !important;
+	}
+}
+@mixin left-chevron-link {
+	color: $blue;
+	text-decoration: none !important;
+	@include rounded-chevron(1.4rem, $orange);
+	clear:both;
+	margin-top: 10px;
+	display: inline-block;
+	width: auto;
+	&:hover {
+		color: $orange;
+	}
+}
+@mixin right-sliding-icon($icon, $font-size: 1rem) {
+	&::after {
+    content: $icon;
+    font-family: fontawesome;
+		display: inline-block;
+		color: $orange;
+		float: right;
+		font-size: $font-size;
+		line-height: $font-size;
+		height: $font-size;
+		@include transition(all .25s ease-in-out);
+	}
+	&:hover::after {
+		@include transform(translate(5px,0));
+	}
+
+}

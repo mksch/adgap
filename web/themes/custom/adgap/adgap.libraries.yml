@@ -1,0 +1,22 @@
+global-styling:
+  css:
+    theme:
+      lib/stacktable/stacktable.css: {}
+      js/owlcarousel/owl.carousel.min.css: {}
+      js/owlcarousel/owl.theme.default.min.css: {}
+      lib/font-awesome/css/font-awesome.min.css: {}
+      css/app.css: {}
+      css/print.css: { media: print }
+      
+global-js:
+  js:
+    js/owlcarousel/owl.carousel.min.js: {}
+    bower_components/foundation-sites/dist/js/foundation.min.js: {}
+    js/jquery.hoverintent.js: {}
+    lib/main.js: {}
+    lib/stacktable/stacktable.js: {}
+    js/tracking.js: {preprocess: false}
+  dependencies: 
+  - core/drupal 
+  - core/jquery
+  - core/jquery.once

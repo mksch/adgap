@@ -1,0 +1,224 @@
+<?php 
+
+/*
+* ADGAP Theme specific preprocess functions to aid in theming
+* Author: MK
+* Date: 2019
+*/
+
+/**
+ * remove drupal 8 generator tag
+ */
+function adgap_page_attachments_alter(array &$attachments) {
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+    }
+  }
+}
+
+/*
+* use these to set up the content wrapper size on pages - keeping it in one place if we need to modify it.
+*/
+
+function adgap_preprocess(&$variables) {
+  $variables['page_grid'] = 'small-12 small-centered medium-12 large-11 column';
+  $variables['http_host'] = $_SERVER['HTTP_HOST'];
+}
+
+function adgap_preprocess_page(&$variables) {
+	$variables['copyright'] = t("@date",
+		array('@date' => date('Y'))
+  );
+}
+
+/*
+* put the region title as a class for styling 
+*/
+
+function adgap_preprocess_region(&$vars) { 
+	$region = $vars['elements']['#region'];
+	$vars['attributes']['class'][] = 'region-'. $region;
+}
+
+/*
+* Page title css class
+*/
+
+function adgap_preprocess_page_title(&$variables) {
+  $variables['title_attributes']['class'][] = 'page-title';
+}
+
+
+
+/**
+*	BLOCK WORK
+*/
+
+/*
+* This adds the block type to the template suggestions:
+*/
+function adgap_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $suggestions[] = 'block__' . $variables['elements']['content']['#block_content']->bundle();
+  }
+}
+
+
+
+function adgap_preprocess_block(&$variables) {
+	
+	// so we can grab fields in a twig template for the block content
+	if (isset($variables['elements']['content']['#block_content'])) {
+  	  $variables['block_content'] = $variables['elements']['content']['#block_content'];
+	}
+
+	// adds a region variable to a block. Use it to add a region to menu theme suggestion below. */
+  if (isset($variables["elements"]["#id"])) {
+      $block_id = $variables["elements"]["#id"];
+      //print($block_id);
+      $variables['attributes']['class'] = $block_id;
+
+		 	// save the block ID so we can use it to suggest a menu template */
+			$variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+     
+      // send the block-title to the menus
+	    $variables["content"]['#attributes']['block-title'] = $variables['elements']['#configuration']['label'];
+      //print($variables["content"]['#attributes']['block-title']);
+
+      //send the region to the menus
+      $block = \Drupal\block\Entity\Block::load($block_id);
+      if ($block) {
+        $variables['region'] = $block->getRegion();
+      }
+  }
+}
+/*
+* MENU WORK
+*/
+
+
+function adgap_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+	if (isset($variables['attributes']['block'])) {
+		switch ($variables['attributes']['block']) {
+			
+			case 'block-socialmediabarrightmenu':
+				$suggestions[] = 'menu--social-media';
+				break;
+		}
+	}
+	// add a template suggestion based on region name
+    if (isset($variables["attributes"]["region"])) {
+	    	//print($variables["attributes"]["region"]);
+        $suggestions[] = $variables["theme_hook_original"] . "_" . $variables["attributes"]["region"];
+    }
+
+}
+
+function adgap_preprocess_menu(array &$variables) {
+  // make the footer left quick links menu be a links list
+  if ($variables['menu_name'] == 'quick-links') {
+    if (!isset($variables['attributes']['class'])) {
+      $variables['attributes']['class'] = [];
+    }
+    $variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['links-list']);
+  }
+}
+
+/* I want my own breadcrumb template :) */
+
+function adgap_theme_suggestions_breadcrumb_alter(array &$suggestions, array $variables) {
+    if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['element']['#type'] == 'breadcrumb') {
+        $original_theme_hook = $variables['theme_hook_original'];
+        $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
+    }
+}
+
+/*
+* Paragraphs work
+*/
+
+
+/*
+* For accordions, we can set what header level to give the prompts if we'd like, otherwise, they are just a div
+* The level is set in the main accordion wrapper, so the parent of the item. Go and get it!
+*/
+function adgap_preprocess_paragraph__accordion_item(&$variables) {
+	$paragraph = $variables['elements']['#paragraph'];
+	$parent_id = $paragraph->getParentEntity();
+	if ($parent_id->field_header_level->value) {
+	 $variables['header_level'] = $parent_id->field_header_level->value;
+	}
+}
+
+
+/*
+* Allow an image as a background on text columns
+*/
+
+
+function adgap_preprocess_paragraph__full_column_text(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if (!$paragraph->field_column_background_image->isEmpty()) {
+    $image = $paragraph->field_column_background_image->entity->url();
+    $variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
+    $variables['attributes']['style'][] = 'background-size: cover;';
+    $variables['attributes']['style'][] = 'background-position: center center;';
+    $variables['background-set'] = true;
+  }
+}
+
+/*
+* Allow an image as a background on cta columns
+*/
+function adgap_preprocess_paragraph__call_to_action_column(&$variables) {
+  $paragraph = $variables['paragraph'];
+  if (!$paragraph->field_column_background_image->isEmpty()) {
+    $image = $paragraph->field_column_background_image->entity->url();
+    $variables['attributes']['style'][] = 'background-image: url("' . $image . '");';
+    $variables['attributes']['style'][] = 'background-size: cover;';
+    $variables['attributes']['style'][] = 'background-position: center center;';
+  }
+}
+
+
+
+
+/*
+* Add css classes for styling purposes where needed
+*/
+function adgap_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'field_cta_link') {
+    $variables['items'][0]['content']['#options']['attributes']['class'][] = 'cta-link';
+  } 
+}
+
+
+/*
+* SEARCH
+*/
+
+/*
+* change placeholder text in search
+*/
+function adgap_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	//$form['actions']['submit']['#attributes']['class'][] = 'icon-search';
+  $form['actions']['submit']['#suffix'] = '<span class="icon-search"></span>';
+// Add placeholder text
+  $form['keys']['#attributes']['placeholder'] = t('Type to Search');
+  $form['close_link'] = array(
+      '#markup' => '<a class="search-close">Close</a>',
+  );
+
+}
+
+/* using our own template for a search block in 2 places: pull down search, and search page. */
+
+function adgap_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  $elementID = $variables['element']['#id'];
+	if ($elementID == 'search-block-form' || $elementID == 'search-form') {
+		$suggestions[] = $variables["theme_hook_original"] . "__" . "search";
+	}
+}
+

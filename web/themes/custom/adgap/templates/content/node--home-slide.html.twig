@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override to display items in the home page carousel 
+ *
+*/
+#} 
+	{% set tagline = content.field_slide_learn_more[0]['#title'] %}
+	{% if not tagline %}
+	{% set tagline = 'Learn More' %}
+	{% endif %}
+	
+	{% if content.field_slide_image|render %}
+  	<div class="slide-image">
+  	  {{content.field_slide_image}}
+  	</div>
+		<div class="slide-text-wrapper col-back-{{content.field_slide_background_color[0]}}">
+			<div class="slide-text">
+	  	  	{{content.field_slide_text_full}}
+	  	  <a class="s-more-button" href="{{ content.field_slide_learn_more[0]['#url'] }}">{{ tagline }}</a>
+	  	</div>
+  	</div>
+  {% endif %}
+

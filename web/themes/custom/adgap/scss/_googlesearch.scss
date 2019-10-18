@@ -1,0 +1,275 @@
+ /***
+* Google Search
+***/
+form.gsc-search-box {
+	display: none !important;
+}
+.google_cse_search-results {
+	min-height: 800px;
+		@include breakpoint(small only) {
+			padding-left: 0;
+			margin-left: 0;
+		}
+	li {
+		@include breakpoint(small only) {
+			padding: 10px 0px !important;
+		}
+	}
+}
+.gsc-table-result tbody {
+	background-color: transparent !important;
+}
+.gsc-tabHeader {
+	font-size: 1rem;
+}
+
+.gsc-resultsHeader {
+	display: none !important;
+}
+.gsc-control-cse {
+	padding: 0 !important;
+}
+/* Wrapper for a result. */
+
+div.gsc-webResult.gsc-result {
+	background-color: $light-grey;
+	border-left: 2px solid $grey !important;
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 15px;
+	padding: 1em 0;
+	border-bottom: 1px solid #777777;
+	padding-left: 30px;
+	@include breakpoint(small only) {
+		padding-left: 0px;
+		margin: 15px 0px;
+	}
+}
+.gs-webResult.gs-result {
+	position: relative;
+	
+}
+
+.gsc-result-info {
+	text-align: left;
+	font-size: 1em;
+	margin: 10px 0;
+	padding-left: 30px;
+}
+
+
+.gsc-result .gs-title {
+	height: auto !important;
+	float: left;
+	padding: 4px 0px;
+	width: 100%;
+}
+.gsc-result .gs-title a {
+	text-decoration: none !important;
+}
+.gsc-result .gs-title a:hover {
+	text-decoration: underline !important;
+}
+.gsc-url-top {
+display: none !important;
+}
+.gsc-url-bottom {
+display: block !important;
+}
+.gs-title {
+	padding-top: 15px !important;
+}
+/* specialized, result type specific, fine grained controls */
+.gsc-result div.gs-watermark {
+	display: none;
+}
+
+/* show the tab from where this result came */
+
+div.gs-webResult.gs-result {
+	padding: 0px 10px;
+}
+.gs-per-result-labels	span {
+		display: none;
+	}
+.gs-per-result-labels	.gs-label {
+		position: absolute;
+		left: 3px;
+		top: -10px;
+}
+/* By default show thumbnail at the left of the snippet */
+.gsc-thumbnail-left {
+display: block;
+}
+.gsc-thumbnail-inside {
+display: none;
+}
+/* specialized, result type specific, fine grained controls */
+.gsc-result div.gs-watermark {
+display: none;
+}
+/** the URL **/
+/* By default show url at the bottom of the snippet */
+.gsc-url-top {
+	display: none;
+}
+.gsc-url-bottom {
+	display: block;
+}
+
+.gs-visibleUrl-short {
+	display: none !important;
+}
+.gs-visibleUrl-long {
+	display: block !important;
+	margin-top: 10px;
+}
+
+.gs-result a.gs-visibleUrl,
+.gs-result .gs-visibleUrl {
+	font-weight: normal;
+	color:  inherit !important;
+	font-size: 14px;
+}
+
+/* tabbed mode of search control */
+.gsc-tabsAreaInvisible,
+.gsc-refinementsAreaInvisible,
+.gsc-refinementBlockInvisible {
+	display : none;
+}
+/* tab specific results header supression
+* - no twiddle, tabbed mode runs in full expand mode
+* - no title
+* - no stats
+*/
+.gsc-tabData .gsc-resultsHeader .gsc-title {
+	display: none;
+	padding-left: 30px;
+}
+.gsc-tabData .gsc-resultsHeader .gsc-stats {
+	display: none;
+}
+.gsc-tabData .gsc-resultsHeader .gsc-results-selector {
+	display: none;
+}
+/* pagination */
+.gsc-results .gsc-cursor-box {
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+	cursor: pointer;
+	padding: 12px 15px;
+	margin-right:10px;
+	float:left;
+	position:relative;
+	line-height:1;
+	font-size:14px;
+	color: #FAA634;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page,
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page:hover {
+	cursor : default;
+	font-weight: bold;
+	color: black;
+}
+.gssb_c {
+	margin: 0 0 0 -10px;
+}
+.gsc-completion-container {
+	background :white;
+}
+/* remove branding */
+.gcsc-branding {
+	display:none !important;
+}
+
+/* tabbed mode of search control
+ * .gsc-tabsArea : the box containing all of the tabs
+ * .gsc-tabsAreaInvisible : same as above, but this is the state when search has been cleared
+ * .gsc-tabHeader : an individual tab
+ * .gsc-tabHeader.gsc-tabhActive : the active tab
+ * .gsc-tabHeader.gsc-tabhInactive : an inactive tab
+ * .gsc-tabData : the data area/box containg results and header data for each tab
+ * .gsc-tabData.gsc-tabdActive : the data area for the active tab
+ * .gsc-tabData.gsc-tabdInactive : the data area for inactive tabs
+ */
+.gsc-tabsArea {
+  clear: both;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  border-bottom: none !important;
+  }
+
+.gsc-tabsArea .gs-spacer {
+  font-size : 1px;
+  margin-right : 0;
+  overflow : hidden;
+}
+
+.gsc-tabsArea .gs-spacer-opera {
+  margin-right : 0;
+}
+
+.gsc-tabsAreaInvisible,
+.gsc-refinementsAreaInvisible,
+.gsc-refinementBlockInvisible {
+  display : none;
+  }
+
+.gsc-tabHeader {
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 2px !important;
+  margin-top: 2px;
+  }
+
+.gsc-tabHeader.gsc-tabhActive {
+	border: none !important;
+	border-left: none !important;
+	border-top: 2px solid #d35E13 !important;
+  color: black;
+  color: #d35e13 !important;
+  }
+.gsc-tabHeader span:hover {
+  color: #d35E13 !important;
+  }
+.gsc-tabHeader:focus {
+  background-color: none !important;
+  outline: none !important;
+  }
+
+.gsc-tabHeader.gsc-tabhInactive {
+	border: none !important;
+  color: #676767;
+  cursor: pointer;
+  }
+
+.gsc-tabData.gsc-tabdActive {
+  display: block;
+  }
+
+.gsc-tabData.gsc-tabdInactive {
+  display: none;
+  }
+  
+@include breakpoint(small only) {
+	.gsc-tabHeader {
+		margin-bottom: 1px !important;
+	}
+	div.gsc-tabHeader.gsc-tabhActive.gsc-inline-block,
+	div.gsc-tabHeader.gsc-tabhInactive.gsc-inline-block {
+		display: block;
+		float: left;
+		text-align: left;
+		width: 100%;
+	}
+	.gsc-tabsArea,
+	.gsc-tabsArea > div {
+		height: auto !important;
+	}
+.gsc-tabHeader.gsc-tabhActive {
+	border-bottom: none !important;
+  }
+	
+}

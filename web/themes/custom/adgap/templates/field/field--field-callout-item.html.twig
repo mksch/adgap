@@ -1,0 +1,7 @@
+<div class="callouts">
+{% for item in items %}
+        <div{{ item.attributes.addClass('medium-4','columns') }}>
+        {{ item.content|without('field_background_color')}}
+        </div>
+{% endfor %}
+</div>

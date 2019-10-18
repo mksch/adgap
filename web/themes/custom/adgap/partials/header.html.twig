@@ -1,0 +1,22 @@
+  <header role="banner" id="main-mast">
+   {# using zurb foundation to do the sticky work. #}
+		<div data-sticky-container id="header">
+			<div class="sticky" data-sticky data-top-anchor="1" data-options="stickTo:top; marginTop: 0;  stickyOn: large;" style="width:100%;">
+			  	<div class="row">
+				  	<div class="main-banner large-4 medium-12 small-12 columns">
+				    {% if page.header %}
+				       {{ page.header }}
+				    {% endif %}
+				    </div>
+				    <div class="utility-links large-8 medium-12 small-12 columns hide-for-print">
+				    		<div class="utility-wrapper">
+						    	{% if page.utility_links %}
+								  	{{ page.utility_links }}
+								{% endif %}
+							</div>
+					</div>
+				</div>
+				{{ page.primary_menu }}
+ 			</div>	   
+	  </div>   
+  </header>

@@ -1,0 +1,467 @@
+/**
+	PARAGRAPH STYLES for drupal HIA site
+**/
+section .paragraph {
+	float: left;
+}
+/* Full Column TEXT */
+.paragraph {
+	position: relative;
+	clear: both;
+	&.row {
+/* 		margin-left: 0 !important; */
+	}
+	&.add-padding {
+		padding: 0rem 1rem;
+	}
+}
+.no-padding,
+.column--width-full {
+		padding: 0 !important;
+		.video-embed-field-responsive-video {
+			max-width: 100% !important;
+		}
+}
+/* put a margin on all paragraphs that are at the bottom 
+	of the page, except for landing page tiles. 
+	We choose whether to pad them from the dashboard.
+*/
+
+.paragraph:last-child {
+	&:not(.tiles-wrapper) {
+	  margin-bottom: 10px;
+	}
+}
+
+/* IMAGE WITH TEXT */
+.paragraph--type--image-with-text {
+	float: left;
+	h2 {
+		padding: 1.7rem .1rem;
+	}
+	.p-image {
+		margin: 0;
+		padding: 0;
+	}
+  .p-image img {
+		  display: block;
+		  margin: 10px auto;
+		  max-width: 100%;
+			padding: 0;
+	 }
+	 .p-content p {
+			 float: left;
+	 }
+}
+@include breakpoint(large) {
+.paragraph--type--image-with-text {
+		float: left;
+		.p-image img {
+		  margin: 0 auto;
+	}
+}
+}
+
+/* ACCORDION */
+.accordion-wrapper {
+	position: relative;
+	float: left !important;
+	width: 100%;
+	h2 {
+		border-bottom: none;
+		font-weight: normal;
+	}
+}
+.accordion-row {
+	counter-increment: prompt-counter;
+	float: left;
+	width: 100%;
+	@include transition(all .5s ease-in-out);
+	.ac-prompt {
+		cursor: pointer;
+		border-bottom: 1px solid $white;
+		background-color: $orange-light;
+		position: relative;
+		font-size: 1.3rem;
+		color: $blue;
+		font-weight: normal;
+		margin-bottom: 1px;
+		margin-top: 0;
+		padding: .8rem 1.5rem .8rem 3rem;
+	  @include transition(all .25s ease-in-out);
+		&.open,
+		&:hover {
+			background-color: $orange-mid;
+			&:before {
+				color: $orange !important;
+			}
+		}
+		&::before {
+			font-family: FontAwesome;
+			content: "\f067";
+			position: absolute;
+			@include vertical-center();
+			left: 20px;
+			font-size: 1.2rem;
+		}
+		&.open::before {
+// 			@include transform(rotate(180deg)) !important;
+			transform:  translateY(-50%) rotate(-180deg);
+			color: $orange;
+			content: "\f068"
+		}
+	}
+	.ac-content {
+		float: left;
+		width: 100%;
+		position: relative;
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height .4s);
+    .content-wrapper {
+	    width: 100%;
+	    padding: 20px 40px;
+	    float: left;
+    }
+	}
+}
+.no-js {
+	.accordion-row .ac-content {
+		max-height: none;
+	}
+}
+
+.number-accordion .ac-prompt {
+	padding-left: 3rem;
+	&::before {
+	  position: absolute;
+	  width: 1.2em;
+	  height: 1.2em;
+	  font-size: 1.2em;
+	  line-height: 1.2;
+	  text-align: center;
+	  color: $white;
+	  content: counter(prompt-counter);
+	  border-radius: 50%;
+	  background-color: $purple;
+	  @include vertical-center();
+	  left: .4em;
+	}
+	&:not(.open)::before {
+	    font-family: inherit !important;
+	}
+}
+
+
+
+/* BLOCK QUOTES */
+blockquote {
+	clear: both;
+	padding: 20px;
+	border: 1px solid $orange;
+	width: 90%;
+	margin: 10px auto;
+	@include rounded(6px);
+	&.quote-text,
+	p {
+		font-size: 1.4rem;
+		font-weight: bold;
+		color: $blue !important;
+		position: relative;
+		padding: 0px 60px 0px 60px;
+		@include breakpoint(small only) {
+			font-size: 1rem;
+			padding: 0px 20px 40px 20px;
+		}
+		text-align: left;
+		&::before,
+		&::after {
+			font-size: .8rem;
+			font-weight: normal;
+			position: absolute;
+			font-family: fontawesome;
+			opacity: .5;
+		}
+		&::before {
+			content: "\f10d";
+			top: 0;
+			left: 0;
+		}
+		&::after {
+			content: "\f10e";
+			top: 0;
+			right: 0;
+		}
+		
+	}		
+}
+span.cite,
+cite {
+		clear: both;
+		display: block;
+		width: 100%;
+		text-align: right;
+		color: $font-color;
+		font-size: 1rem;
+		@include breakpoint(small only) {
+			font-size: .8rem;
+		}
+}
+
+@include breakpoint(large) {
+	blockquote {
+		padding: 20px 50px;
+	}
+}
+//
+// Block quotes that are entered as individual paragraphs
+// They may have an image in them, so special styling.
+//
+.block-quote .p-wrapper {
+	padding: 20px;
+	border: 1px solid $orange;
+	margin: 10px auto;
+	@include rounded(6px);
+	blockquote {
+		border: none;
+	}
+}
+
+
+/** Body Text **/
+
+.paragraph--type--full-body-text {
+	float: left;
+	width: $text-width-medium;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	h2 {
+		padding-top: 10px;
+	}
+}
+
+@include breakpoint(large) {
+	.paragraph--type--full-body-text {
+		width: $text-width-large;
+	}	
+}
+
+
+
+/** COLUMNS **/
+.column-wrapper,
+.columns-wrapper {
+	background-size: cover;
+}
+.columns-wrapper {
+	overflow: hidden;
+	display: block;
+	position: relative;
+	clear: both;
+	width:100%;
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+	&.rounded {
+	 @include rounded(7px);
+	}
+// these below were used before trying to make
+// landing page have areas of full width.
+// 	float: left;
+/* 	max-width: 100% !important; */
+/* 	width: 100%; */
+	&:not(.collapse) {
+		padding-bottom: 10px;
+		padding-top: 10px;
+	}
+}
+.column--pad {
+	.p-wrapper {
+		padding: 15px 30px;
+		float: left;
+	}
+}	
+/*
+	Uneven Columns
+*/
+@include breakpoint(medium) {
+.columns-wrapper-66-33 {
+	.column-uneven-1 {
+		@include grid-column(8);
+	}
+	.column-uneven-2 {
+		@include grid-column(4);
+	}
+}
+.columns-wrapper-33-66 {
+	.column-uneven-1 {
+		@include grid-column(4);
+	}
+	.column-uneven-2 {
+		@include grid-column(8);
+	}
+}
+.columns-wrapper-75-25 {
+	.column-uneven-1 {
+		@include grid-column(9);
+	}
+	.column-uneven-2 {
+		@include grid-column(3);
+	}
+}
+.columns-wrapper-25-75 {
+	.column-uneven-1 {
+		@include grid-column(3);
+	}
+	.column-uneven-2 {
+		@include grid-column(9);
+	}
+}
+}
+
+@include breakpoint(small) {
+.columns-wrapper-66-33,
+.columns-wrapper-33-66,
+.columns-wrapper-75-25,
+.columns-wrapper-25-75 {
+	.column-image img {
+		width: inherit !important;
+		max-width: 100%;
+		margin: 0 auto !important;
+	}	
+	}
+}
+
+/* text column */
+.column-text {
+	position: relative;
+	float: left;
+/* 	padding: 10px 0px; */
+	width: 100%;
+	h2.wrap-title {
+		border: none;
+		font-weight: normal;
+		font-size: 1.5rem;
+		margin-bottom: .5rem;
+	}
+	.p-wrapper {
+		ul.ref-list {
+			padding-left: 0 !important;
+			margin-left: 0 !important;
+			li {
+				width: 95%;
+			}
+		}
+	}
+	*:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+.column-text.padding {
+	.p-wrapper {
+		padding: 15px 25px;
+		float: left;
+		width: 100%;
+		h3 {
+			margin-top: .5rem;
+		}
+	}
+}
+
+@include breakpoint(medium) {
+	.column-text {
+		/* couldn't vertical center unless if all columns in a row are text */
+		margin-top: 0px;
+		.p-wrapper {
+			/* @include vertical-center(); */
+			max-width: 100%;
+		}
+	}
+}	
+
+
+/* IMAGE column */
+
+.column-image {
+/* if we want to vertically center the image 
+	display: table-cell;
+	text-align: left;
+	vertical-align: middle;
+*/
+	&.padding {
+		padding: 10px 15px;
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+	&.no-padding {
+		img {
+			margin: 0;
+			max-width: 100%;
+		}
+	}
+
+}
+/* call to action column */
+
+.column-cta {
+	float: left;
+	margin-top: 10px;
+	padding: 10px 25px 20px 25px;
+	width: 100%;
+	position: relative;
+	padding-bottom: 35px;
+	.cta-text {
+		padding-bottom: 10px;
+		@include breakpoint(large) {
+			padding-bottom: 50px;
+		}
+	}
+	.cta-link {
+		position: absolute;
+		bottom: 5px;
+		max-width: 100%;
+		width: 90%;
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
+	@include breakpoint(large) {
+		.column-cta {
+			margin-top: 0px;	
+			.cta-text {
+				padding-bottom: 20px;
+			}		
+		}
+	}
+
+/* Hero Card Paragraph */
+	
+.hero-wrapper {
+	width: 100%;
+	float: left;
+	position: relative;
+	@include breakpoint(large) {
+	  height: 400px;		
+	}
+}
+.hero-text {
+	text-align: left;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	line-height: 1.5;
+	display: inline-block;
+	h2 {
+		border-bottom: none;
+	}	
+	@include breakpoint(medium) {
+	  width: 75%;		
+	}
+	@include breakpoint(large) {
+		width: 65%;
+	}
+}

@@ -1,0 +1,44 @@
+	{% if page.social_media %}
+	<div class="footer-top container">
+		<div class="row collapse">
+			<div class="small-12 columns">
+				{{ page.social_media}}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+  {% if page.footer %}
+    <footer role="contentinfo" class="container">
+	    <div class="row collapse">
+	    	<div class="small-12 columns">
+	      	{{ page.footer }}
+	      </div>
+	    </div>
+			<section class="container footer-columns">
+		    <div class="row">
+		    	<div class="medium-3 columns footer-left">
+		    		{{page.footer_left}}
+		    	</div>
+		    	<div class="medium-9 columns footer-map">
+		    		<div class="row">
+			    		<div class="medium-3 columns fm-col-1">
+			    			{{ page.footer_map_1}}
+			    		</div>
+			    		<div class="medium-3 columns fm-col-2">
+			    			{{ page.footer_map_2}}
+			    		</div>
+			    		<div class="medium-3 columns fm-col-3">
+			    			{{ page.footer_map_3}}
+			    		</div>
+			    	</div>
+	    	  </div>
+		  <div class="copyright">
+		  &#169;{{ copyright }} American Geriatrics Society All Rights Reserved.
+		  </div>
+		  {% endif %}
+		    </div>
+	    </section>
+	    {% if copyright %}
+    </footer>
+  {% endif %}
+

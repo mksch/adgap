@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Default theme implementation for field collection items.
+ *
+ * Available variables:
+ * - content: An array of comment items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {% hide(content.field_example) %} to temporarily suppress the printing
+ *   of a given element.
+ * - title: The (sanitized) field collection item label.
+ * - url: Direct url of the current entity if specified.
+ * - page: Flag for the full page state.
+ * - attributes: HTML attributes for the surrounding element.
+ *    Attributes include the 'class' information.
+ * - content_attributes: HTML attributes for the content element.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'field-collection-updates-button',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  	<div class="update-button content"{{ content_attributes }}>
+        {{ content.field_updates_title }}
+        {% if content.field_updates_image|render %}
+        	<div class="image-wrapper">
+        		{{ content.field_updates_image }}
+					</div>
+        {% endif %}
+    </div>
+    {% if content.field_updates_text|render or content.field_updates_more|render %}
+	    <div class="update-button-footer">
+	        {% if content.field_updates_text|render %}
+	        	<div class="u-text-wrapper">
+	        		{{ content.field_updates_text }}
+						</div>
+	        {% endif %}
+	        {% if content.field_updates_more|render %}
+	        		<a class="learn-more-link" href="{{ content.field_updates_more[0]['#url'] }}">{{ content.field_updates_more[0]['#title'] }}</a>
+	        {% endif %}
+	    </div>
+    {% endif %}
+
+</div>
