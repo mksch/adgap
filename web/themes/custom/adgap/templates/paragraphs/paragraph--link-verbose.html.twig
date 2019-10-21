@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph:
+ *  MODIFIED FOR TYPE: link verbose
+ *
+#}
+
+<h3>
+{{ content.field_link_item }}
+</h3>
+{% if content.field_link_text|render %}
+	<div class="link-text">{{content.field_link_text}}</div>
+{% endif %}

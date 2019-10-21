@@ -26,6 +26,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
+        "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_browser": "^2.2",
         "drupal/entity_embed": "^1.0",
         "drupal/inline_entity_form": "^1.0@RC",

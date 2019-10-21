@@ -22,8 +22,9 @@
  */
 #}
 
-
-<div class="owl-carousel owl-theme" id="owl-slider">
+<div class="row">
+  <div class="small-12 columns">
+		<div class="owl-carousel owl-theme" id="owl-slider">
       {% for item in items %}
       
 		 {% if item.content['#node'].field_background_color.value|render %}
@@ -36,4 +37,6 @@
         	{{ item.content }}
         </div>
       {% endfor %}
+		</div>
+	</div>
 </div>

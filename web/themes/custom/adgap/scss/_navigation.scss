@@ -9,7 +9,7 @@ ul.menu .mobile-toggle,
 ul.menu .crumb-toggle,
 ul.menu .sub-toggle {
 	  position: absolute;
-    top: 0;
+    top: 4px;
     right: -10px;
     z-index: 99;
     cursor: pointer;
@@ -38,7 +38,7 @@ ul.menu .sub-toggle {
 }
 
 .title-bar {
-	background-color: $blue;
+	background-color: $teal;
 	margin-top: 5px;
 	width: 100%;
 }
@@ -57,7 +57,7 @@ ul.menu .sub-toggle {
 
 /* styles for all menus in the primary menu */
 .region-primary_menu {
-	background-color: $blue;
+	background-color: $teal;
 	position: relative;
 	ul.menu {
 // 		@include transition(all .7s ease-out);
@@ -73,7 +73,7 @@ ul.menu .sub-toggle {
 			padding-right: 80px;
 		}
 		a:hover {
-			color: $accent-color;
+			color: $white;
 		}
 	}
 	
@@ -95,7 +95,7 @@ ul.menu .sub-toggle {
 	
 	.main-nav ul.menu.level0 {
 		position: absolute;
-		background-color: $blue;
+		background-color: $teal;
  		@include menu-hide();
 		width: 100%;
 		&.menu-open {
@@ -115,7 +115,7 @@ ul.menu .sub-toggle {
 			display:block;
 		}
 		> li:hover {
-			background-color: lighten($blue, 10%);
+			background-color: lighten($teal, 10%);
 			color: $white;
 			@include transition(background-color .7s ease-out);
 		}
@@ -208,14 +208,14 @@ ul.menu .sub-toggle {
 			float: left;
 		}
 		> li > a {
-			padding: .4rem 1rem;
+			padding: .4rem 1.5rem;
 			text-transform: uppercase;
 // 			max-width: 170px;
 			line-height: 1.2;
 			vertical-align: middle;
 			height: $menu-height;
 			letter-spacing: .1rem;
-			font-size: .9rem !important;
+			font-size: 1rem !important;
 		}
 	}
 	.main-nav ul.menu.level0 {
@@ -237,7 +237,7 @@ ul.menu .sub-toggle {
 			> a {
 				position: relative;
 				color: $white !important;
-				padding: 0 .6rem;
+				padding: 0 2.6rem;
 				text-align: center;
 				width: 100%;
 				line-height: $menu-height;
@@ -304,9 +304,10 @@ ul.menu .sub-toggle {
 
 }
 // override the padding for a small subset of the window until it transitions to medium screen width
-@media screen and (min-width: 1085px) {
+@media screen and (max-width: 1209px ) {
 	.main-nav ul.menu.level0 > li > a {
-			padding: 0 1rem !important;	
+		padding-left:  1rem !important;
+		padding-right:  1rem !important;
 	}	
 }
 /**

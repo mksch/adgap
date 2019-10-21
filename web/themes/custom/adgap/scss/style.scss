@@ -57,14 +57,14 @@ html {
 	display: block;
 }
 h1,h2,h3,h4,h5,h6 {
-	color: $blue;
+	color: $teal;
 	max-width:100%;
 }
 
 h2 {
 	width: 100%;
-	color: $blue;
-	border-bottom: 1px solid $blue;
+	color: $teal;
+	border-bottom: 1px solid $teal;
 	margin-bottom: 1.5rem;
 }
 .region-sidebar_first {
@@ -130,7 +130,7 @@ a {
 .back-grey {
 	background-color: $mid-grey;
 	> h1,h2,h3,h4,h5,h6 {
-		color: $blue;
+		color: $teal;
 	}
 	p {
 		color: $font-color;
@@ -140,7 +140,7 @@ a {
 .back-orange {
 	background-color: $orange-light;
 	* {
-		color: $blue;
+		color: $teal;
 	}
 }
 .col-back-blue,
@@ -150,9 +150,9 @@ a {
 		color: $white !important;
 	}
 }
-.col-back-purple,
-.back-purple {
-	background-color: $purple;
+.col-back-teal,
+.back-teal {
+	background-color: $teal;
 	> h1,h2,h3,h4,h5,h6,p,a {
 		color: $white;
 	}
@@ -164,7 +164,7 @@ a {
 	}
 	&.back-grey {
 		h1,h2,h3,h4,h5,h6 {
-			color: $blue;
+			color: $teal;
 		}
 		p {
 		 color: $font-color;
@@ -215,7 +215,7 @@ h1.page-title {
 */
 
 a {
-	color: lighten($blue, 5%);
+	color: lighten($teal, 5%);
 	font-weight: bold;
 // 	text-decoration: underline;
 	&:focus {
@@ -358,9 +358,9 @@ ul.menu {
 .blue-text {
 	color: $blue !important;
 }
-.purple,
-.purple-text {
-	color: $purple !important;
+.teal,
+.teal-text {
+	color: $teal !important;
 }
 .needlink {
 /*
@@ -587,20 +587,7 @@ ul.ref-list {
 			right: 0px;	
 		}
 	}
-// 	a.externalLink:not([href$=".pdf"]) {
-	a.externalLink {
-		float: left;
-		width: 100%;
-		padding-right: 15px;
-		&:after {
-		color: $red;
-	  font-family: FontAwesome;
-	  font-weight: 400;
-	  margin-left: .3rem;
-	  font-size: 1.1rem;
-	  content: "\f08e";    
-	  }
-	} 	
+	
 } /* end ul.ref-list */
 
 
@@ -640,13 +627,31 @@ ul.links-list {
 			margin-right: 5px;
 			position: absolute;
 			left: -10px;
-			color: $blue !important;
+			color: $teal !important;
 			@include transition(all .25s ease-in-out);
 		}
 		&:hover::before {
 			@include transform(translate(3px,0));
 		}
 	}
+}
+ul.links-list,
+ul.ref-list {
+// 	a.externalLink:not([href$=".pdf"]) {
+	a.externalLink {
+		float: left;
+		width: 100%;
+		padding-right: 15px;
+		&:after {
+		color: $orange;
+	  font-family: FontAwesome;
+	  font-weight: 400;
+	  padding-left: .3rem;
+	  font-size: 1.1rem;
+	  content: "\f08e";    
+	  font-weight:bold;
+	  }
+	} 	
 }
 
 .col-back-blue ul.links-list li a::before,
@@ -1442,6 +1447,16 @@ footer .sitemap-nav ul li {
 
 
 /***
+	MISSION Block
+***/
+
+.mission {
+	background-color: $blue;
+	color: $white;
+	padding: 35px 0px 25px 0px;
+	border-bottom: 20px solid $teal;
+}
+/***
 	CALL OUT ITEMS
 ***/
 
@@ -1905,33 +1920,46 @@ iframe {
 	background-color: $white;
 */
 
-	max-height: 450px;
+	max-height: 500px;
 	overflow: auto;
 	margin: 0 auto;
-	padding: 0px 20px 20px 20px;
+	padding: 0px;
 	h2 {
 		margin-bottom: .5rem;
-		color: $blue;
 		border-bottom: none;
 		font-size: 1.5rem;
+	}
+	&.with-border a {
+		border-top: 1px solid $teal;
+		padding: 10px 0px 10px 30px;
 	}
 }
 
 .links-roll {
+	h3 {
+		font-size: 1.1rem;
+		margin:0;
+	}
 	a {
 		@include left-chevron-link();
 		width: 100%;
 		display: block;
 		text-decoration: none;
-		padding: 10px 0px 10px 30px;
-		border-top: 1px solid $blue;
+		padding: 5px 0px 5px 30px;
+// 		border-top: 1px solid $blue;
 		position: relative;
-		margin-top: 0;
 		@include transition(all .5s ease-in-out);
-		
+		margin-top: 0;
 		&:hover {
 			background-color: $white;
 		}
+		&.externalLink::before {
+				  content: "\f08e"; 
+		}
+	}
+	p {
+		margin-left: 30px;
+		margin-bottom: 5px;
 	}
 }
 

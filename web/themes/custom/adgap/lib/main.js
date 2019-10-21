@@ -134,8 +134,6 @@ function initSettings() {
     $(this).attr("target", "_blank");
   });	
 	
-	
-/*
 	$("a[href*='http://'], a[href*='https://']").not("[href*='"+location.hostname.replace("www.","")+"']").each(function() {
 		jQuery(this).click(function(event) {
 		  event.preventDefault();
@@ -143,7 +141,6 @@ function initSettings() {
 			window.open(this.href, '_blank');
 			}).addClass('externalLink');
 	});
-*/
 
   /* find the mediaquery size */	
 	$('body').attr('data-media', Foundation.MediaQuery.current);

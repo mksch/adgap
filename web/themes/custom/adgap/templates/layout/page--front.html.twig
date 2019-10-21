@@ -52,20 +52,18 @@
     
   {% if page.banner %}
   	<section class="banner edge-to-edge">
-  	<div class="banner-inner row collapse">
-	    <div class="small-12 columns">
 	      {{ page.banner }}
-	    </div>
-    </div>
     </section>
   {% endif %}  
   
 
   {% if page.highlights %}
-  	<section class="home-highlights row collapse">
+  	<section class="home-highlights edge-to-edge">
+  	<div class="highlights-inner row collapse">
     	<div class= "small-12 columns">
       {{ page.highlights }}
       </div>
+    </div>
     </section>
   {% endif %}
 
