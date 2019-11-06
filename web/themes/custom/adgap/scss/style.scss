@@ -1176,6 +1176,7 @@ ul.ags-site-logos {
 }
 
 
+
 .footer-columns {
 	border-top: 1px solid $blue;
 	padding-top: 40px;
@@ -1183,7 +1184,38 @@ ul.ags-site-logos {
 	@include breakpoint(small only) {
 		padding-left: 20px;		
 	}
+	.footer-left {
+		margin-bottom: 30px;
+		h2 {
+			color: $blue;
+			font-size: 1.2rem;
+			font-weight: bold;
+			margin-bottom: .2rem;
+		}
+		ul {
+			margin-left: 1rem;
+			float: left;
+			li {
+				padding: 0px 0px;
+			}
+			a {
+				line-height: normal;
+			}
+		}
+	}
 }
+.footer-map {
+	nav {
+	 float: left;
+	}
+	h2 {
+		font-size: 1rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin: 0;
+	}
+}
+
 .footer-map {
 	@include breakpoint(small only) {
 	.fm-col-3 {
@@ -1248,10 +1280,13 @@ ul.ags-site-logos {
 }
 footer #block-quicklinks {
 	h2 {
-		color: $orange;
+		color: $blue;
 	}
 	ul.links-list {
 		margin-left: 1rem;
+		li {
+			line-height: normal;
+		}
 		a {
 			font-size: 1rem;	
 			padding-left: .5rem;		

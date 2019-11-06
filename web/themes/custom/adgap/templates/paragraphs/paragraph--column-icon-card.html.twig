@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * theme: ADGAP
+ * author: mks
+ * date: 23-Oct-19
+ * 
+ * Theme override to display a paragraph of type: Icon Card
+ * icon: the image (type: icon from the media library)
+ * icon_card_text: text to appear under the image
+ *
+ */
+#}
+
+{% if content.field_icon_card_link|render is not empty %}
+	{% set showlink = true %}
+{% endif %}
+
+<div{{ attributes.addClass('icon-card') }}>
+	<div class="row">
+		{% if showlink %}
+			  <a href="{{ content.field_icon_card_link[0]['#url'] }}">
+		{% endif %}
+  		<div class="small-12 large-4 columns">
+  			<div class="icon-inner small-centered">
+		  {% if content.field_icon|render %}
+		  	    {{ content.field_icon }}
+		  {% endif %}
+		  </div>
+		</div>
+  	
+    <div class="small-12 large-8 columns icon-text">
+		  {% if content.field_icon_card_title|render %}
+		    <h2>{{ content.field_icon_card_title}}</h2>
+		  {% endif %}
+		  {{ content.field_icon_card_text }}
+    </div>
+    
+    	{% if showlink %}
+		  </a>
+		{% endif %}
+	</div>
+
+</div>

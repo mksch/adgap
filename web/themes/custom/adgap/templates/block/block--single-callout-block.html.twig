@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * theme: ADGAP
+ * author: mks
+ * date: 23-Oct-19
+ * 
+ * Theme override to display a block of type: Single Call Out Block
+ * call_out_image: the image (type: callout from the media library)
+ * call_out_link: internal or external link to go to on click
+ * call_out_text: text to appear under the image
+ *
+ */
+#}
+<div{{ attributes.addClass('callout-item') }}>
+{# transitioning to using media library. first check if that field was used before defaulting to image field 
+#}
+
+	  <h2>
+	  {{label}}
+	  </h2>
+
+  {% if content.field_call_out_media_image|render %}
+    <a href="{{ content.field_call_out_link[0]['#url'] }}">
+    {{ content.field_call_out_media_image }}
+    </a>
+  {% endif %}
+    <div class="cta-text">
+    	{{ content.field_call_out_text }}
+    </div>
+    
+    <a class="learn-more-link" href="{{ content.field_call_out_link[0]['#url'] }}">Learn More</a>
+
+</div>
