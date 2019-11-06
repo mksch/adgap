@@ -13,22 +13,54 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        }
+        },
+				{
+				  "type": "package",
+				  "package": {
+				    "name": "ckeditor/div",
+				    "version": "4.10.1",
+				    "type": "drupal-library",
+				    "extra": {
+				      "installer-name": "ckeditor/plugins/div"
+				    },
+				    "dist": {
+				      "url": "https://download.ckeditor.com/div/releases/div_4.10.1.zip",
+				      "type": "zip"
+				    }
+				  }
+				},
+		    {
+		        "type": "package",
+		        "package": {
+		            "name": "ckeditor/tabletoolstoolbar",
+		            "version": "0.0.1",
+		            "type": "drupal-library",
+		            "dist": {
+		                "url": "https://download.ckeditor.com/tabletoolstoolbar/releases/tabletoolstoolbar_0.0.1.zip",
+		                "type": "zip"
+		            }
+		        }
+		    }
     ],
     "require": {
         "php": ">=7.0.8",
-        "composer/installers": "^1.2",
+        "ckeditor/div": "^4.10",
+        "ckeditor/tabletoolstoolbar": "^0.0.1",
+        "composer/installers": "^1.7",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/addtoany": "^1.12",
         "drupal/admin_toolbar": "^1.27",
         "drupal/block_field": "^1.0@alpha",
+        "drupal/ckeditor_div_manager": "^1.0.0",
+        "drupal/ckeditor_tabletoolstoolbar": "^1.0",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.7.0",
         "drupal/ctools": "^3.2",
         "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_browser": "^2.2",
         "drupal/entity_embed": "^1.0",
+        "drupal/google_cse": "^3.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/linkit": "^4.3",
         "drupal/menu_block": "^1.5",

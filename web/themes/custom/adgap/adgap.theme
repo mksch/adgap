@@ -189,10 +189,25 @@ function adgap_preprocess_paragraph__call_to_action_column(&$variables) {
 */
 function adgap_preprocess_field(&$variables) {
   $element = $variables['element'];
+
+	/* Call Out 
+	*/
+	
   if ($element['#field_name'] == 'field_cta_link') {
     $variables['items'][0]['content']['#options']['attributes']['class'][] = 'cta-link';
   } 
+
+	/* MEDIA put the media type as a class on the image.
+	*/ 
+
+  if ($element['#entity_type'] == 'media' && $element['#field_name'] == 'field_media_image') {
+    foreach ($variables['items'] as $key => $item) {
+      $variables['items'][$key]['content']['#item_attributes']['class'][] = $element['#bundle'];
+    }
+  }
 }
+
+
 
 
 /*

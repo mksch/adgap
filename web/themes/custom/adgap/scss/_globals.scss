@@ -13,7 +13,7 @@ $light-grey: #F5F5F5;
 $mid-grey: darken($light-grey, 5%);
 $shadow-color: #CECECE;
 
-$teal: #006272; // ADGAP Teal
+
 
 // hia colors
 
@@ -29,13 +29,18 @@ $purple-light: rgb(235,226,238);
 
 // ADGAP blues
 //#0073CE // ADGAP blue
-$blue:rgb(1,115,187);
-$blue-light: rgb(223,236,246);
-$blue-mid: rgb(204,227,244);
+$blue:rgb(1,113,206);
+$blue:rgb(8,113,186);
+$blue-light: rgb(222,237,249);
+$blue-mid: rgb(127,183,230);
 
-$orange: #d25d12;
+$teal: rgb(0,96,114); // ADGAP Teal
+$teal-light: rgb(229,239,241);
+$teal-mid: rgb(77,144,157);
+
+$orange: rgb(211,94,19);
 $orange-mid: rgb(238,195,167);
-$orange-light: rgb(249,233,222);
+$orange-light: rgb(250,239,231);
 
 $back-color: $white;
 

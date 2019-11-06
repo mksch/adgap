@@ -69,13 +69,27 @@
 
   
   {% if page.callouts %}
-    <section class="home-callouts edge-to-edge">
+  <section class="home-callouts edge-to-edge">
+  	<div class="callouts-inner row collapse">
+    	<div class= "small-12 columns">
 	      {{ page.callouts }}
+      </div>
+    </div>
     </section>
   {% endif %}
   
+  {% if page.callouts %}
+  <section class="home-blocks edge-to-edge">
+  	<div class="home-blocks-inner row collapse">
+    	<div class= "small-12 columns">
+	      {{ page.home_blocks_row }}
+      </div>
+    </div>
+    </section>
+  {% endif %}
+
   {% if page.home_blocks_1 %}
-    <section class="home-blocks s edge-to-edge">
+  <section class="home-blocks edge-to-edge">
     	<div class="row">
     		{% if page.home_blocks_1 %}
 		    	<div class= "home-blocks medium-4 columns">
@@ -99,7 +113,7 @@
 
 
 {#  
-    <section class="content-wrapper row" >
+    <section{{attributes.addClass("content-wrapper row")}} >
     <div class="content-inner medium-12 columns" >
       {{ page.content }}
     </div>

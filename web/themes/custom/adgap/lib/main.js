@@ -202,15 +202,15 @@ function initTouch() {
 // Print function
 //
 
-/*
+
 function initPrint () {
- $('.hia-print').bind('click', function(e) {
+ $('.adgap-print').bind('click', function(e) {
 		e.preventDefault();
 		window.print();	
 		return false;
  });
 }
-*/
+
 
 
 //
@@ -258,13 +258,13 @@ window.onload = function(e)
 $(document).ready(function() {
 	initSettings();
 	scrollTop();
-	//initPrint();
+	initPrint();
 	initTouch();
 	initDropMenu();
 	initAccordion();
 	initSlider();
 	initNavToggle();
-	$('.responsive').cardtable();
+	$('.responsive').cardtable(); /* make tables marked as responsive stack on small screens */
 	//$('table').cardtable();
 	//$(document).foundation();
 });

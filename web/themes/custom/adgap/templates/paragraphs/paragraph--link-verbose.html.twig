@@ -5,10 +5,11 @@
  *  MODIFIED FOR TYPE: link verbose
  *
 #}
-
+<div{{attributes.addClass("links-long")}}>
 <h3>
 {{ content.field_link_item }}
 </h3>
 {% if content.field_link_text|render %}
 	<div class="link-text">{{content.field_link_text}}</div>
 {% endif %}
+</div>

@@ -112,10 +112,10 @@ ul.menu .sub-toggle {
 		> li a {
 			font-size: 1.1rem;
 			padding: .9rem .8rem;
-			display:block;
+			display: inline-block;
 		}
 		> li:hover {
-			background-color: lighten($teal, 10%);
+			background-color: $teal-mid;
 			color: $white;
 			@include transition(background-color .7s ease-out);
 		}
@@ -210,7 +210,6 @@ ul.menu .sub-toggle {
 		> li > a {
 			padding: .4rem 1.5rem;
 			text-transform: uppercase;
-// 			max-width: 170px;
 			line-height: 1.2;
 			vertical-align: middle;
 			height: $menu-height;
@@ -220,20 +219,16 @@ ul.menu .sub-toggle {
 	}
 	.main-nav ul.menu.level0 {
 		position: inherit;
-//		display: table;
 		width: 100%;
 		@include menu-visible();
 		margin-bottom: 0 !important;
 		> li {
 			width: auto;
-//			display: table-cell;
-//			float: none;
 			border-left: 1px solid $white;
 			border-top: none;
 			&:last-child {
 				border-right: 1px solid $white;
 			}
-
 			> a {
 				position: relative;
 				color: $white !important;
@@ -275,6 +270,7 @@ ul.menu .sub-toggle {
 			}
 			a {
 				color: $font-color;
+				padding: 0rem .9rem;
 			}
 			a:hover {
 				color: $accent-color;

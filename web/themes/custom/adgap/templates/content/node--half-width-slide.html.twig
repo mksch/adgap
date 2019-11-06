@@ -11,7 +11,7 @@
 	{% endif %}
 
 	{% if content.field_home_slide_image|render %}
-  	<div class="slide-image">
+  	<div{{attributes.addClass("slide-image")}}>
   	  {{content.field_home_slide_image}}
   	</div>
 		<div class="slide-text-wrapper">

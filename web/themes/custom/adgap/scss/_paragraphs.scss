@@ -62,7 +62,70 @@ section .paragraph {
 }
 }
 
+
+
 /* ACCORDION */
+
+
+/* ACCORDION */
+.accordion-wrapper {
+	position: relative;
+	float: left !important;
+	width: 100%;
+}
+.accordion-row {
+	float: left;
+	width: 100%;
+	@include transition(all .5s ease-in-out);
+	.ac-prompt {
+		cursor: pointer;
+		border-bottom: 1px solid $grey;
+		background-color: darken($light-grey, 5%);
+		position: relative;
+		font-size: 1.2rem;
+		margin-bottom: 0px;
+		padding: .8rem 2rem;
+	  @include transition(all .25s ease-in-out);
+		&.open,
+		&:hover {
+			color: $orange;
+			background-color: darken($light-grey, 10%);
+		}
+		&::after {
+			font-family: FontAwesome;
+			content: "\f078";
+			position: absolute;
+			right: 10px;
+			color: $orange;
+		}
+		&.open::after {
+			@include transform(rotate(180deg));
+		}
+	}
+	.ac-content {
+		float: left;
+		width: 100%;
+		position: relative;
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height .4s);
+    .content-wrapper {
+	    width: 100%;
+	    padding: 20px 40px;
+	    @include breakpoint(small only) {
+		    padding: 20px 5px;
+	    }
+	    float: left;
+    }
+	}
+}
+.no-js {
+	.accordion-row .ac-content {
+		max-height: none;
+	}
+}
+
+/* these were the HIA accordion style
 .accordion-wrapper {
 	position: relative;
 	float: left !important;
@@ -130,6 +193,7 @@ section .paragraph {
 		max-height: none;
 	}
 }
+*/
 
 .number-accordion .ac-prompt {
 	padding-left: 3rem;
@@ -438,6 +502,43 @@ cite {
 			}		
 		}
 	}
+
+/* Icon Card Paragraph */
+
+.icon-card {
+	@include breakpoint(small only) {
+		border-bottom: 1px solid $blue;
+		padding: 20px;		
+	}
+	.icon-inner img {
+		display: block;
+		margin: 10px auto;
+	}
+	.icon-text {
+		h2 {
+			text-align: center;
+		}
+	}
+	a {
+		font-weight: normal;
+		color: $font-color;
+	}
+}
+@include breakpoint(large) {
+	.icon-card {
+	border-bottom: none;
+	padding: 10px;
+		.icon-inner {
+			margin-top: 2rem;
+			display: block;
+			}	
+		.icon-text {
+			h2 {
+				text-align: left !important;
+			}
+		}	
+	}
+}
 
 /* Hero Card Paragraph */
 	

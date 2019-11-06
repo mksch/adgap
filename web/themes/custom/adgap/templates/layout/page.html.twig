@@ -56,7 +56,7 @@
 
 {% include directory ~ '/partials/header.html.twig' %}
 {# responsive - foundation #}
-<div class="container">
+<div{{ attributes.addClass("container") }}>
   <main role="main" id="main-content">
 		 {% if page.breadcrumb %}
 		 		<div class="row large-collapse crumb-area">

@@ -1,7 +1,14 @@
 {#
 /**
  * @file
- * Theme override to display a block of type: list of links
+ *
+ * theme: ADGAP
+ * author: mks
+ * date: 23-Oct-19
+ * 
+ * Theme override to display a block of type: list of links 
+ * list_title: title
+ * content: the links - can be multiple
  *
  */
 #}
@@ -20,7 +27,9 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   {% if content.field_list_title|render %}
-  	<h2>{{ content.field_list_title }}</h2>
+  {{ title_prefix }}
+  	  <h2>{{ content.field_list_title }}</h2>
+  {{ title_suffix }}
   {% endif%}
   {% block content %}
   		<div class="links-roll">

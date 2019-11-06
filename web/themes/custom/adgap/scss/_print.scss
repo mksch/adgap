@@ -5,6 +5,11 @@
 	.fm-col-3,
 	aside .sidebar,
 	.views-exposed-form,
+	footer,
+	.footer-top,
+	.utility-links,
+	.region-primary-menu,
+	.region-breadcrumb,
 	#block-addtoanybuttons {
 		display: none;
 	}
@@ -18,12 +23,13 @@
 		max-height: none !important;
 	}
 	.main-banner,
-	#block-sitebranding {
+	#block-adgap-branding {
 		width: 100% !important;
 		float: left;
+		height: auto;
 	}
-	.hia-form ul,
-	#block-hia-content ul,
+	.adgap-form ul,
+	#block-adgap-content ul,
 	.ac-content ul,
 	ul.square-bullet-list {
 		list-style-type: square !important;
@@ -38,30 +44,4 @@
 		position: relative !important;
 	}
 
-	.drug-category {
-		.wrapper {
-			padding-top: 0;
-			padding-bottom: 0;
-		}
-		.drug-header {
-			h2.back-blue {
-				border-bottom: 1px solid #000000;
-				background-color: red !important;
-			}
-		}
-		.drug-area {
-			p {
-				margin-bottom: 0;
-			}
-			li {
-				margin: 0;
-			}
-		}
-	}
-		/*
-	* Blog specific 
-	*/
-	.addtoany_content {
-		display: none;
-	}
 }

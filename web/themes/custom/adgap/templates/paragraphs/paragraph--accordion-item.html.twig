@@ -51,7 +51,7 @@
 
 {% set prompt_tag = header_level is not empty ? header_level : 'p' %}
 
-	<div class="accordion-row">
+	<div{{attributes.addClass("accordion-row")}}>
 	<{{prompt_tag}} class="ac-prompt">{{ content.field_accordion_title }}</{{prompt_tag}}>
 	<div class="ac-content">
 		<div class="content-wrapper">
