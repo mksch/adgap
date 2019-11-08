@@ -7,6 +7,8 @@
 
 /** these are always in the way. move them! **/
 
+
+
 .contextual {
 	top: -20px;
 }
@@ -140,8 +142,8 @@ a {
 .col-back-grey,
 .back-grey {
 	background-color: $mid-grey;
-	> h1,h2,h3,h4,h5,h6 {
-		color: $teal;
+	> h1,h2,h3,h4,h5,h6,a {
+		color: $teal !important;
 	}
 	p {
 		color: $font-color;
@@ -157,7 +159,7 @@ a {
 .col-back-blue,
 .back-blue {
 	background-color: $blue-light;
-	*:not(.hbox-grey):not(.backlink) {
+	*:not(.hbox-grey):not(.backlink):not(h1,h2,h3,h4) {
 		color: $font-color !important;
 	}
 }
@@ -374,10 +376,8 @@ ul.menu {
 	color: $teal !important;
 }
 .needlink {
-/*
 	background-color: yellow !important;
 	color: $font-color !important;
-*/
 }
 
 
@@ -476,6 +476,9 @@ a.backlink {
 	display: block;
 	margin-bottom: 1.2rem;
 	border:none;
+	h1,h2,h3,h4,h5,a {
+		color: $teal;
+	}
 }
 
 .press-release .hbox,
@@ -604,12 +607,16 @@ ul.links-list {
 		margin: 3px 0px !important;
 		width: 100%;
 		float: left;
+		h1 a, h2 a, h3 a, h4 a {
+			color: $teal;
+		}
 	}
 	li::before {
 		background: none !important;
 		width: 0;
 		height: 0;
 	}
+
 	li a {
 		padding: 0px 0px 0px 10px;
 		position: relative;
@@ -718,6 +725,7 @@ ul.arrow-list {
 	clear: both;
 	margin-top: 10px;
 	float: left;
+	width: 100%;
 }
 .region-breadcrumb {
 	margin-top: 15px;

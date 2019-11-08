@@ -4605,14 +4605,15 @@ a {
   background-color: #e8e8e8;
 }
 
-.col-back-grey > h1, .col-back-grey h2, .col-back-grey h3, .col-back-grey h4, .col-back-grey h5, .col-back-grey h6,
+.col-back-grey > h1, .col-back-grey h2, .col-back-grey h3, .col-back-grey h4, .col-back-grey h5, .col-back-grey h6, .col-back-grey a,
 .back-grey > h1,
 .back-grey h2,
 .back-grey h3,
 .back-grey h4,
 .back-grey h5,
-.back-grey h6 {
-  color: #006072;
+.back-grey h6,
+.back-grey a {
+  color: #006072 !important;
 }
 
 .col-back-grey p,
@@ -4635,8 +4636,8 @@ a {
   background-color: #deedf9;
 }
 
-.col-back-blue *:not(.hbox-grey):not(.backlink),
-.back-blue *:not(.hbox-grey):not(.backlink) {
+.col-back-blue *:not(.hbox-grey):not(.backlink):not(h1):not(h2):not(h3):not(h4),
+.back-blue *:not(.hbox-grey):not(.backlink):not(h1):not(h2):not(h3):not(h4) {
   color: #222222 !important;
 }
 
@@ -4868,10 +4869,8 @@ ul.menu {
 }
 
 .needlink {
-  /*
-	background-color: yellow !important;
-	color: $font-color !important;
-*/
+  background-color: yellow !important;
+  color: #222222 !important;
 }
 
 .footnote {
@@ -5009,6 +5008,40 @@ a.backlink:hover::after {
   display: block;
   margin-bottom: 1.2rem;
   border: none;
+}
+
+.press-release .hbox h1, .press-release .hbox-blue h1, .press-release .hbox h2, .press-release .hbox-blue h2, .press-release .hbox h3, .press-release .hbox-blue h3, .press-release .hbox h4, .press-release .hbox-blue h4, .press-release .hbox h5, .press-release .hbox-blue h5, .press-release .hbox a, .press-release .hbox-blue a,
+.callout h1,
+.callout h2,
+.callout h3,
+.callout h4,
+.callout h5,
+.callout a,
+.hbox-orange h1,
+.hbox-orange h2,
+.hbox-orange h3,
+.hbox-orange h4,
+.hbox-orange h5,
+.hbox-orange a,
+.hbox-grey h1,
+.hbox-grey h2,
+.hbox-grey h3,
+.hbox-grey h4,
+.hbox-grey h5,
+.hbox-grey a,
+.hbox-clear h1,
+.hbox-clear h2,
+.hbox-clear h3,
+.hbox-clear h4,
+.hbox-clear h5,
+.hbox-clear a,
+.hbox-bordered h1,
+.hbox-bordered h2,
+.hbox-bordered h3,
+.hbox-bordered h4,
+.hbox-bordered h5,
+.hbox-bordered a {
+  color: #006072;
 }
 
 .press-release .hbox, .press-release .hbox-blue,
@@ -5202,6 +5235,10 @@ ul.links-list li {
   float: left;
 }
 
+ul.links-list li h1 a, ul.links-list li h2 a, ul.links-list li h3 a, ul.links-list li h4 a {
+  color: #006072;
+}
+
 ul.links-list li::before {
   background: none !important;
   width: 0;
@@ -5323,6 +5360,7 @@ ul.arrow-list > li a:hover {
   clear: both;
   margin-top: 10px;
   float: left;
+  width: 100%;
 }
 
 .region-breadcrumb {
