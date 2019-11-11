@@ -209,7 +209,9 @@ a {
 		width: calc(100% - 220px);	
 	}
 }
-
+h1.home-title {
+	text-indent: -9999px !important;
+}
 h1.page-title {
 	text-align: left;
 	color: $orange;

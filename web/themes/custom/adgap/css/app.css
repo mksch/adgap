@@ -4698,6 +4698,10 @@ a {
   }
 }
 
+h1.home-title {
+  text-indent: -9999px !important;
+}
+
 h1.page-title {
   text-align: left;
   color: #d35e13;
