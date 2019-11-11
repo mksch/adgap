@@ -5474,8 +5474,7 @@ header[role="banner"] .sticky {
 
 @media screen and (max-width: 39.9375em) {
   #block-adgap-branding {
-    padding-top: 80px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
   }
 }
 
@@ -5485,6 +5484,7 @@ header[role="banner"] .sticky {
 
 .utility-wrapper {
   float: left;
+  padding-bottom: 10px;
 }
 
 @media print, screen and (min-width: 40em) {
@@ -6320,7 +6320,6 @@ footer .sitemap-nav ul li {
     width: 100%;
     float: left;
     border-bottom: 1px solid gainsboro;
-    color: #0871ba;
     min-height: 280px;
   }
   .slide-image {
@@ -6335,7 +6334,7 @@ footer .sitemap-nav ul li {
 @media print, screen and (min-width: 40em) {
   .slide-text {
     padding: 10px 30px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .owl-nav {
     width: 100%;
@@ -6361,7 +6360,7 @@ footer .sitemap-nav ul li {
   }
   .slide-text {
     padding: 5px 30px 5px 0px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
@@ -6413,15 +6412,12 @@ footer .sitemap-nav ul li {
 }
 
 @media screen and (max-width: 39.9375em) {
-  .callout-item {
+  .home-callouts .column-wrapper {
     padding-bottom: 30px;
     padding-top: 30px;
-    border-bottom: 1px solid #c1c1c1;
     max-width: 450px;
     margin: 20px auto 0px auto;
-  }
-  .callouts .columns:last-child .callout-item {
-    border-bottom: none;
+    float: left;
   }
 }
 
@@ -7004,6 +7000,16 @@ iframe {
   padding-top: 20px;
   background-color: #deedf9;
   padding-bottom: 10px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .home-blocks .column-wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #0871ba;
+  }
+  .home-blocks .column-wrapper:last-child {
+    border-bottom: none;
+  }
 }
 
 /***

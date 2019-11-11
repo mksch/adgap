@@ -50,7 +50,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/addtoany": "^1.12",
-        "drupal/admin_toolbar": "^1.27",
+        "drupal/admin_toolbar": "^2.0",
         "drupal/block_field": "^1.0@alpha",
         "drupal/ckeditor_div_manager": "^1.0.0",
         "drupal/ckeditor_tabletoolstoolbar": "^1.0",

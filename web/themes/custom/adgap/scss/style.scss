@@ -822,8 +822,7 @@ header[role="banner"] {
 		float: left;
 	}
 	@include breakpoint(small only) {
-	  padding-top: 80px;
-	  padding-bottom: 0px;		
+	  padding-bottom: 10px;		
 	}
 }
 .site-logo img {
@@ -833,6 +832,7 @@ header[role="banner"] {
 
 .utility-wrapper {
 	float: left;
+	padding-bottom: 10px;
 	@include breakpoint(medium) {
 		float: right;
 	}
@@ -1444,7 +1444,6 @@ footer .sitemap-nav ul li {
 		width: 100%;
 		float: left;
 		border-bottom: 1px solid darken($light-grey, 10%);
-		color: $blue;
 		min-height: 280px;
 	}
 	.slide-image {
@@ -1459,7 +1458,7 @@ footer .sitemap-nav ul li {
 @include breakpoint(medium) {
 	.slide-text {
 		padding: 10px 30px;
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 	}
 	.owl-nav {
 		width: 100%;
@@ -1486,7 +1485,7 @@ footer .sitemap-nav ul li {
 	}
 	.slide-text {
 		padding: 5px 30px 5px 0px;
-		font-size: 1.2rem;
+		font-size: 1.4rem;
  		@include vertical-center;
 	}
 	.owl-nav {
@@ -1531,15 +1530,14 @@ footer .sitemap-nav ul li {
 }
 
 @include breakpoint(small only) {
-	.callout-item {
-		padding-bottom: 30px;
-		padding-top: 30px;
-		border-bottom: 1px solid darken($grey, 5%);
-		max-width: 450px;
-		margin: 20px auto 0px auto;
-	}
-	.callouts .columns:last-child .callout-item {
-		border-bottom: none;
+	.home-callouts {
+		.column-wrapper {
+			padding-bottom: 30px;
+			padding-top: 30px;
+			max-width: 450px;
+			margin: 20px auto 0px auto;
+			float: left;
+		}
 	}
 }
 .callout-item {
@@ -2015,6 +2013,15 @@ iframe {
 	padding-top: 20px;
 	background-color: $blue-light;
 	padding-bottom: 10px;
+	@include breakpoint(small only) {
+		.column-wrapper {
+			padding-bottom: 10px;
+			border-bottom: 1px solid $blue;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
 }
 
 /***

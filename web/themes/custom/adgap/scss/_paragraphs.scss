@@ -508,7 +508,7 @@ cite {
 .icon-card {
 	@include breakpoint(small only) {
 		border-bottom: 1px solid $blue;
-		padding: 20px;		
+		padding: 20px;
 	}
 	.icon-inner img {
 		display: block;
