@@ -6279,6 +6279,8 @@ footer .sitemap-nav ul li {
   float: left;
   min-height: 0;
   background-color: transparent !important;
+  color: #006072;
+  font-weight: bold;
 }
 
 .slide-image {
@@ -6291,7 +6293,7 @@ footer .sitemap-nav ul li {
 }
 
 .slide-text h1, .slide-text h2, .slide-text h3, .slide-text h4 {
-  color: #000000 !important;
+  color: #006072 !important;
 }
 
 .slide-text.white-text {
