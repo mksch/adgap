@@ -36,7 +36,6 @@ function initNavToggle() {
 	
 }
 
-
 /*
 //******************************************************************
 //  sliders
@@ -246,7 +245,10 @@ $(window).on('changed.zf.mediaquery', function(event, newSize, oldSize) {
 			else {
 				$('body').attr('data-media', newSize);
 //				$('*').removeClass('menu-open');
-			}		
+			}	
+			// close submenus that were opened on small window when size changes	
+		  $('.mobile-toggle').removeClass('menu-open');
+			$('.mobile-toggle').siblings('ul').removeClass('menu-open');
 	}
 });
 

@@ -17,8 +17,8 @@
 	{% set showlink = true %}
 {% endif %}
 
-<div{{ attributes.addClass('icon-card') }}>
-	<div class="row">
+<div{{ attributes.addClass('icon-card') }} data-equalizer-watch >
+<div class="row">
 		{% if showlink %}
 			  <a href="{{ content.field_icon_card_link[0]['#url'] }}">
 		{% endif %}

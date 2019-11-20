@@ -8,6 +8,7 @@ section .paragraph {
 .paragraph {
 	position: relative;
 	clear: both;
+	max-width: 100%;
 	&.row {
 /* 		margin-left: 0 !important; */
 	}
@@ -125,75 +126,6 @@ section .paragraph {
 	}
 }
 
-/* these were the HIA accordion style
-.accordion-wrapper {
-	position: relative;
-	float: left !important;
-	width: 100%;
-	h2 {
-		border-bottom: none;
-		font-weight: normal;
-	}
-}
-.accordion-row {
-	counter-increment: prompt-counter;
-	float: left;
-	width: 100%;
-	@include transition(all .5s ease-in-out);
-	.ac-prompt {
-		cursor: pointer;
-		border-bottom: 1px solid $white;
-		background-color: $orange-light;
-		position: relative;
-		font-size: 1.3rem;
-		color: $teal;
-		font-weight: normal;
-		margin-bottom: 1px;
-		margin-top: 0;
-		padding: .8rem 1.5rem .8rem 3rem;
-	  @include transition(all .25s ease-in-out);
-		&.open,
-		&:hover {
-			background-color: $orange-mid;
-			&:before {
-				color: $orange !important;
-			}
-		}
-		&::before {
-			font-family: FontAwesome;
-			content: "\f067";
-			position: absolute;
-			@include vertical-center();
-			left: 20px;
-			font-size: 1.2rem;
-		}
-		&.open::before {
-// 			@include transform(rotate(180deg)) !important;
-			transform:  translateY(-50%) rotate(-180deg);
-			color: $orange;
-			content: "\f068"
-		}
-	}
-	.ac-content {
-		float: left;
-		width: 100%;
-		position: relative;
-    max-height: 0;
-    overflow: hidden;
-    @include transition(max-height .4s);
-    .content-wrapper {
-	    width: 100%;
-	    padding: 20px 40px;
-	    float: left;
-    }
-	}
-}
-.no-js {
-	.accordion-row .ac-content {
-		max-height: none;
-	}
-}
-*/
 
 .number-accordion .ac-prompt {
 	padding-left: 3rem;
@@ -408,6 +340,7 @@ cite {
 		font-weight: normal;
 		font-size: 1.5rem;
 		margin-bottom: .5rem;
+		margin-top:  0;
 	}
 	.p-wrapper {
 		ul.ref-list {
@@ -477,6 +410,15 @@ cite {
 	width: 100%;
 	position: relative;
 	padding-bottom: 35px;
+	.cta-title {
+		border-bottom: 1px solid $grey;
+	}
+	.cta-title * {
+		color: $teal;
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
 	.cta-text {
 		padding-bottom: 10px;
 		@include breakpoint(large) {
@@ -494,6 +436,14 @@ cite {
 		margin: 0 auto;
 	}
 }
+//
+// special cases
+//
+/*
+.back-teal .cta-title * {
+	color: $white;
+}
+*/
 	@include breakpoint(large) {
 		.column-cta {
 			margin-top: 0px;	
@@ -502,6 +452,16 @@ cite {
 			}		
 		}
 	}
+
+/*
+* Block Paragraphs
+*/
+
+/*
+.paragraph--type--column-block {
+	max-width: 100% !important;
+}
+*/
 
 /* Icon Card Paragraph */
 
@@ -517,6 +477,7 @@ cite {
 	.icon-text {
 		h2 {
 			text-align: center;
+			margin-top: 0;
 		}
 	}
 	a {
@@ -526,6 +487,7 @@ cite {
 }
 @include breakpoint(large) {
 	.icon-card {
+	float: left;
 	border-bottom: none;
 	padding: 10px;
 		.icon-inner {

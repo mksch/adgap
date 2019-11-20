@@ -10,6 +10,7 @@
 	{% set tagline = 'Learn More' %}
 	{% endif %}
 
+<section class="half-slide">
 	{% if content.field_home_slide_image|render %}
   	<div{{attributes.addClass("slide-image")}}>
   	  {{content.field_home_slide_image}}
@@ -21,4 +22,5 @@
 	  	    </div>
   	</div>
   {% endif %}
+</section>
 

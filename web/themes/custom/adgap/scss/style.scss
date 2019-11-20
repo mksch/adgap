@@ -13,7 +13,10 @@
 	top: -20px;
 }
 
-
+.edge-to-edge {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
 *, :after, :before {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
@@ -152,14 +155,17 @@ a {
 .col-back-orange,
 .back-orange {
 	background-color: $orange-light;
-	* {
+	p {
+		color: $font-color;
+	}
+	h1,h2,h3,h4 {
 		color: $teal;
 	}
 }
 .col-back-blue,
 .back-blue {
 	background-color: $blue-light;
-	*:not(.hbox-grey):not(.backlink):not(h1,h2,h3,h4) {
+	*:not(.hbox-grey):not(.backlink):not(h1 *,h2 *,h3 *,h4 *) {
 		color: $font-color !important;
 	}
 }
@@ -167,7 +173,10 @@ a {
 .back-teal {
 	background-color: $teal;
 	> h1,h2,h3,h4,h5,h6,p,a {
-		color: $white;
+		color: $white !important;
+	}
+	.cta-title {
+		color: $white !important;
 	}
 }
 
@@ -187,8 +196,18 @@ a {
 		color: $white;
 	}
 	&.back-orange * {
-		color: $blue;
+		color: $font-color;
 	}
+	&.back-teal {
+		background-color: $teal-light;
+		> h1,h2,h3,h4,h5,h6,p,a {
+			color: $font-color !important;
+		}
+		.cta-title {
+			color: $teal !important;
+		}
+}
+
 }
 
 /*
@@ -297,8 +316,18 @@ ol.circles-list {
     margin-left: 4em;
     margin-top: 1em;
     padding: 0;
+}
+
+
+// If we want to continue numbering in different
+// accordions, we have to do the reset above
+// the accordion
+//
+body,
+ol:not(.continue-numbers) {
     counter-reset: li-counter;
 }
+
 ol > li,
 ol.circles-list > li {
     position: relative;
@@ -318,14 +347,21 @@ ol.circles-list > li:before {
     line-height: 1.6;
     text-align: center;
     color: inherit;
-    
- 
     border-radius: 50%;
     background-color: $grey;
     content: counter(li-counter);
     counter-increment: li-counter;
 }
-
+/*
+ol.continue-numbers {
+	counter-increment: start;
+}
+ol.continue-numbers li:before {
+    counter-increment: start;
+    content: counter(start);
+	
+}
+*/
 ul.menu {
 	margin-left: 0;
 }
@@ -610,7 +646,16 @@ ul.links-list {
 		width: 100%;
 		float: left;
 		h1 a, h2 a, h3 a, h4 a {
-			color: $teal;
+			color: $teal !important;
+		}
+		h2 {
+			font-size: 1.4rem;
+		}
+		h3 {
+			font-size: 1.2rem;
+		}
+		p {
+			padding-left: 12px;
 		}
 	}
 	li::before {
@@ -643,8 +688,10 @@ ul.links-list {
 		&:hover::before {
 			@include transform(translate(3px,0));
 		}
+
 	}
 }
+ul.menu,
 ul.links-list,
 ul.ref-list {
 // 	a.externalLink:not([href$=".pdf"]) {
@@ -663,7 +710,10 @@ ul.ref-list {
 	  }
 	} 	
 }
-
+ul.menu a.externalLink {
+	width: auto;
+	float: none;
+}
 /*
 .col-back-blue ul.links-list li a::before,
 .back-blue ul.links-list li a::before {
@@ -1349,6 +1399,7 @@ footer .sitemap-nav ul li {
 .owl-carousel {
 	clear: both;
 }
+
 .carousel-item {
 	position: relative;
 	width: 100%;
@@ -1363,7 +1414,18 @@ footer .sitemap-nav ul li {
 		position: relative !important;
 	}
 }
-	
+.page-node-type-page {
+	.owl-carousel {
+		width: 95%;
+		margin: 0 auto;
+		.slide-image {
+			height: 100%;
+		}
+		.slide-image p {
+			margin-bottom: 0;
+		}
+	}
+}	
 
 /* slide learn more buttons */
 
@@ -1410,7 +1472,7 @@ footer .sitemap-nav ul li {
 	width: 50%;
 	float: left;
 	min-height: 0;
-	background-color: transparent !important;
+	background-color: $blue-light !important;
 	color: $teal;
 	font-weight: bold;
 	font-size: 1.2rem;
@@ -1479,6 +1541,9 @@ footer .sitemap-nav ul li {
 
 
 @include breakpoint(large) {
+	.half-slide {
+		padding: 0 !important;
+	}
   .s-more-button {
 	  margin-top: 10px;
   }	
@@ -1506,7 +1571,7 @@ footer .sitemap-nav ul li {
 .mission {
 	background-color: $blue;
 	color: $white;
-	padding: 35px 0px 25px 0px;
+	padding: 35px 20px 25px 20px;
 	border-bottom: 20px solid $teal;
 }
 /***
@@ -1523,10 +1588,6 @@ footer .sitemap-nav ul li {
 	.home-callouts {
 		.column-wrapper {
 	 	  border-right: 1px solid $blue;
-			height:400px;
-			@include breakpoint(large) {
-				height: 200px;
-			}
 	 		&:last-child {
 		 		border-right: none;
 	 		}
@@ -1537,11 +1598,9 @@ footer .sitemap-nav ul li {
 @include breakpoint(small only) {
 	.home-callouts {
 		.column-wrapper {
-			padding-bottom: 30px;
-			padding-top: 30px;
-			max-width: 450px;
-			margin: 20px auto 0px auto;
-			float: left;
+			padding-bottom: 10px;
+			padding-top: 10px;
+			margin: 0px auto 0px auto;
 		}
 	}
 }
@@ -1593,14 +1652,14 @@ footer .sitemap-nav ul li {
     cursor:pointer;
     width:60px;
     height:60px;
-    background-color: $orange-mid;
+    background-color: $blue-mid;
     @include rounded(50%);
     z-index: 999;
     text-align: center;
     border: 2px solid transparent;
 		@include transition(all .5s ease-in-out);
 		&:hover {
-	    border-color: $pop-color;
+	    border-color: $teal;
 			@include opacity(1);
 		}
     p {
@@ -1610,7 +1669,7 @@ footer .sitemap-nav ul li {
 	    line-height: .7rem !important;
 	    font-size: .6rem;
 	    margin-top: 42%;
-	    color: $purple;
+	    color: $teal;
     }
 }
 #back-top {
@@ -1620,7 +1679,7 @@ footer .sitemap-nav ul li {
     content: "\f062";
     @include horizontal-center();
     top: 0px;
-    color: $purple;
+    color: $teal;
    }
 }
 
@@ -1746,6 +1805,10 @@ ol.search-results {
 /**
 	Board of Directors and staff styling
 **/
+[class^="views_block__board_members_block"] {
+	float: left;
+	margin-bottom: 30px;
+}
 .staff-info,
 .board-member {
 	float: left;
@@ -2047,7 +2110,7 @@ iframe {
 	@include rounded(6px);
 	background-color: $white;
 */
-	max-height: 500px;
+	max-height: 600px;
 	overflow: auto;
 	margin: 0 auto;
 	padding: 0px 20px;
