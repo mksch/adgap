@@ -538,7 +538,7 @@ a.backlink {
 	background-color: transparent;
 }
 .hbox-orange {
-	background-color: $orange-light;
+	background-color: $orange-mid;
 }
 
 
@@ -1652,7 +1652,7 @@ footer .sitemap-nav ul li {
     cursor:pointer;
     width:60px;
     height:60px;
-    background-color: $blue-mid;
+    background-color: $orange-mid;
     @include rounded(50%);
     z-index: 999;
     text-align: center;
@@ -1961,14 +1961,28 @@ table tr.subhead {
 table {
 	max-width: 100% !important;
 	@include table-scroll();
-	.square-fill {
-		background-color: $orange;
+	span.square-fill {
+ 		//background-color: $orange;
 		color: $orange;
 		width: 15px;
 		height: 15px;
 		display: block;
 		margin: 0 auto;
-		font-size: 12px;
+		font-size: 0px;
+		position: relative;
+		color: transparent !important;
+		&::before {
+			content: "\f00C"; // check
+			content: "\f14a"; // square check 
+		font-size: 1.5rem; // if using square check
+			display: block;
+			position: absolute;
+			left: 0;
+			top: -.7rem;
+			color: $orange;
+		  font-family: FontAwesome;
+		  font-weight: 400;
+		}
 	}
 
 }
@@ -2102,6 +2116,8 @@ iframe {
 		margin-bottom: .5rem;
 		border-bottom: none;
 		font-size: 1.5rem;
+		overflow-wrap: break-word;
+		  hyphens: auto;
 	}	
 }
 .links-block {

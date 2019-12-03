@@ -5116,7 +5116,7 @@ a.backlink:hover::after {
 }
 
 .hbox-orange {
-  background-color: #faefe7;
+  background-color: #eec3a7;
 }
 
 /* LIST Types */
@@ -6546,7 +6546,7 @@ footer .sitemap-nav ul li {
   cursor: pointer;
   width: 60px;
   height: 60px;
-  background-color: #7fb7e6;
+  background-color: #eec3a7;
   border-radius: 50%;
   z-index: 999;
   text-align: center;
@@ -6949,14 +6949,28 @@ table {
   overflow-x: auto;
 }
 
-table .square-fill {
-  background-color: #d35e13;
+table span.square-fill {
   color: #d35e13;
   width: 15px;
   height: 15px;
   display: block;
   margin: 0 auto;
-  font-size: 12px;
+  font-size: 0px;
+  position: relative;
+  color: transparent !important;
+}
+
+table span.square-fill::before {
+  content: "\f00C";
+  content: "\f14a";
+  font-size: 1.5rem;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -.7rem;
+  color: #d35e13;
+  font-family: FontAwesome;
+  font-weight: 400;
 }
 
 table.nocolor tr {
@@ -7100,6 +7114,10 @@ iframe {
   margin-bottom: .5rem;
   border-bottom: none;
   font-size: 1.5rem;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .links-block {
