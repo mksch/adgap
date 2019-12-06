@@ -1201,7 +1201,7 @@ ul.socialmedia {
 			margin-right: 0;
 	}
 	li a {
-		@include solid-button($orange, $white);
+		@include solid-button($white, $orange);
 		text-transform: capitalize;
 	}
 }
@@ -1235,7 +1235,11 @@ ul.ags-site-logos {
 	}
 }
 
-
+.footeragslogo {
+	margin-top: 30px;
+	float: left;
+	display: block;
+}
 
 .footer-columns {
 	border-top: 1px solid $blue;
@@ -1264,19 +1268,10 @@ ul.ags-site-logos {
 		}
 	}
 }
-.footer-map {
-	nav {
-	 float: left;
-	}
-	h2 {
-		font-size: 1rem;
-		font-weight: bold;
-		text-transform: uppercase;
-		margin: 0;
-	}
-}
+
 
 .footer-map {
+/*
 	@include breakpoint(small only) {
 	.fm-col-3 {
 		margin-top: 30px;
@@ -1284,6 +1279,7 @@ ul.ags-site-logos {
 	}
 		
 	}
+*/
 	nav {
 	 float: left;
 	}
@@ -1293,8 +1289,9 @@ ul.ags-site-logos {
 		text-transform: capitalize;
 		margin: 0;
 		border: none;
-		color: $orange;
+		color: $blue;
 	}
+/*
 	.fm-col-1 {
 		margin-bottom: 30px;
 		h2 {
@@ -1312,16 +1309,18 @@ ul.ags-site-logos {
 			margin-left: 1rem;
 			float: left;
 			li {
-				padding: 5px 0px;
+				padding: 0px;
 			}
 		}
 	}
+*/
 }
 .sitemap-nav {
 	float: left;
 	ul {
+	list-style-type: none;
 		li {
-			padding: 5px 0px;
+			padding: 0px;
 			width: 100%;
 			float: left;
 			a {
@@ -1330,7 +1329,7 @@ ul.ags-site-logos {
 				display: block;
 				padding: 0;
 				margin: 0;
-				color: $blue;
+				color: $font-color;
 			&:hover {
 				color: $orange;
 			}
@@ -1367,7 +1366,7 @@ footer .sitemap-nav ul li {
 	clear: both;
 	a {
 	 text-decoration: none;
-	 color: $orange;
+	 color: $blue;
 	}
 }
 .sitemap-menu-block {
@@ -1929,6 +1928,9 @@ table tbody, table tfoot,  {
 table td {
  border: 1px solid #CECECE !important;
  padding: 1rem .4rem !important;
+ p:last-child {
+	 margin-bottom: 0;
+ }
 }
 table thead th {
 	border: 1px solid $grey !important;
@@ -1945,6 +1947,7 @@ table thead tr {
 table tr.subhead {
 	background-color: $grey !important;
 	color: $blue !important;
+
 	font-weight: bold;
 	font-size: 1.1rem;
 	td {
@@ -1961,6 +1964,9 @@ table tr.subhead {
 table {
 	max-width: 100% !important;
 	@include table-scroll();
+	@include breakpoint(large) {
+		display: inline-table;
+	}
 	span.square-fill {
  		//background-color: $orange;
 		color: $orange;

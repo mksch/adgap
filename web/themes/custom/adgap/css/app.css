@@ -5971,8 +5971,8 @@ ul.socialmedia li.icon-instagram a:before {
 }
 
 .region-social_media ul:not(.socialmedia) li a {
-  background-color: #d35e13 !important;
-  color: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: #d35e13 !important;
   display: block;
   width: auto;
   float: left;
@@ -5987,7 +5987,7 @@ ul.socialmedia li.icon-instagram a:before {
 }
 
 .region-social_media ul:not(.socialmedia) li a:hover {
-  background-color: rgba(211, 94, 19, 0.9) !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
 ul.ags-site-logos {
@@ -6027,6 +6027,12 @@ ul.ags-site-logos li a {
   display: inline-block;
 }
 
+.footeragslogo {
+  margin-top: 30px;
+  float: left;
+  display: block;
+}
+
 .footer-columns {
   border-top: 1px solid #0871ba;
   padding-top: 40px;
@@ -6063,22 +6069,39 @@ ul.ags-site-logos li a {
   line-height: normal;
 }
 
-.footer-map nav {
-  float: left;
-}
-
-.footer-map h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-@media screen and (max-width: 39.9375em) {
-  .footer-map .fm-col-3 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
+.footer-map {
+  /*
+	@include breakpoint(small only) {
+	.fm-col-3 {
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
+		
+	}
+*/
+  /*
+	.fm-col-1 {
+		margin-bottom: 30px;
+		h2 {
+			font-size: 1.2rem;
+			font-weight: bold;
+			margin-bottom: .2rem;
+		}
+		h3 {
+			color: $purple;
+			font-weight: bold;
+			padding: 0;
+			margin: 0;
+		}
+		ul {
+			margin-left: 1rem;
+			float: left;
+			li {
+				padding: 0px;
+			}
+		}
+	}
+*/
 }
 
 .footer-map nav {
@@ -6091,41 +6114,19 @@ ul.ags-site-logos li a {
   text-transform: capitalize;
   margin: 0;
   border: none;
-  color: #d35e13;
-}
-
-.footer-map .fm-col-1 {
-  margin-bottom: 30px;
-}
-
-.footer-map .fm-col-1 h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: .2rem;
-}
-
-.footer-map .fm-col-1 h3 {
-  color: #532f5c;
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-map .fm-col-1 ul {
-  margin-left: 1rem;
-  float: left;
-}
-
-.footer-map .fm-col-1 ul li {
-  padding: 5px 0px;
+  color: #0871ba;
 }
 
 .sitemap-nav {
   float: left;
 }
 
+.sitemap-nav ul {
+  list-style-type: none;
+}
+
 .sitemap-nav ul li {
-  padding: 5px 0px;
+  padding: 0px;
   width: 100%;
   float: left;
 }
@@ -6136,7 +6137,7 @@ ul.ags-site-logos li a {
   display: block;
   padding: 0;
   margin: 0;
-  color: #0871ba;
+  color: #222222;
 }
 
 .sitemap-nav ul li a:hover {
@@ -6178,7 +6179,7 @@ footer .sitemap-nav ul li {
 
 .sitemap-menu-title a {
   text-decoration: none;
-  color: #d35e13;
+  color: #0871ba;
 }
 
 .sitemap-menu-block {
@@ -6907,6 +6908,10 @@ table td {
   padding: 1rem .4rem !important;
 }
 
+table td p:last-child {
+  margin-bottom: 0;
+}
+
 table thead th {
   border: 1px solid #CECECE !important;
   font-size: 1.1rem;
@@ -6947,6 +6952,12 @@ table {
   display: block;
   width: 100%;
   overflow-x: auto;
+}
+
+@media print, screen and (min-width: 64em) {
+  table {
+    display: inline-table;
+  }
 }
 
 table span.square-fill {
@@ -7294,6 +7305,10 @@ section .paragraph {
   float: left;
   width: 100%;
   transition: all 0.5s ease-in-out;
+}
+
+.accordion-row h1, .accordion-row h2, .accordion-row h3, .accordion-row h4 {
+  margin-top: 0 !important;
 }
 
 .accordion-row .ac-prompt {

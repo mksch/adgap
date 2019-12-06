@@ -7,10 +7,12 @@
 		</div>
 	</div>
 	{% endif %}
-  {% if page.footer %}
+
+
+  {% if page.footer|render %}
     <footer role="contentinfo" class="container">
 	    <div class="row collapse">
-	    	<div class="small-12 columns">
+	    	  <div class="small-12 columns">
 	      	{{ page.footer }}
 	      </div>
 	    </div>
@@ -19,26 +21,27 @@
 		    	<div class="medium-3 columns footer-left">
 		    		{{page.footer_left}}
 		    	</div>
-		    	<div class="medium-9 columns footer-map">
+		    	<div class="medium-8 medium-offset-1 columns footer-map">
 		    		<div class="row">
-			    		<div class="medium-3 columns fm-col-1">
+			    		<div class="medium-4 columns fm-col-1">
 			    			{{ page.footer_map_1}}
 			    		</div>
-			    		<div class="medium-3 columns fm-col-2">
+			    		<div class="medium-4 columns fm-col-2">
 			    			{{ page.footer_map_2}}
 			    		</div>
-			    		<div class="medium-3 columns fm-col-3">
+			    		<div class="medium-4 columns fm-col-3">
 			    			{{ page.footer_map_3}}
 			    		</div>
 			    	</div>
 	    	  </div>
-		  <div class="copyright">
-		  &#169;{{ copyright }} American Geriatrics Society All Rights Reserved.
-		  </div>
-		  {% endif %}
+
 		    </div>
 	    </section>
-	    {% if copyright %}
-    </footer>
+		  <div class="copyright">
+		  <div class="row columns">
+		  &#169;{{ copyright }} American Geriatrics Society All Rights Reserved.
+		  </div>
+		  </div>
+		</footer>
   {% endif %}
 
