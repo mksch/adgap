@@ -6946,6 +6946,21 @@ table tr.subhead td.st-val {
   width: 100%;
 }
 
+/*
+* this is to start the striped after a dark grey subhead
+* with white. Start the striping count after the subhead, 
+* don't count the subhead as a stripe.
+*/
+table tbody tr.subhead ~ tr:not(.subhead):nth-child(odd) {
+  border-bottom: 0;
+  background-color: #f1f1f1 !important;
+}
+
+table tbody tr.subhead ~ tr:not(.subhead):nth-child(even) {
+  border-bottom: 0;
+  background-color: #ffffff !important;
+}
+
 /* tables */
 table {
   max-width: 100% !important;
@@ -6997,6 +7012,12 @@ table.nocolor tr {
 
 .stacktable.small-only {
   display: none !important;
+}
+
+@media screen and (max-width: 39.9375em) {
+  table.stacktable tr {
+    background-color: #ffffff !important;
+  }
 }
 
 @media (max-width: 760px) {

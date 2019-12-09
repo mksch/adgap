@@ -1960,6 +1960,24 @@ table tr.subhead {
 		width: 100%;
 	}
 }
+
+/*
+* this is to start the striped after a dark grey subhead
+* with white. Start the striping count after the subhead, 
+* don't count the subhead as a stripe.
+*/
+
+table tbody tr.subhead ~ tr:not(.subhead) {
+	&:nth-child(odd) {
+    border-bottom: 0;
+    background-color: #f1f1f1 !important;
+	}
+	&:nth-child(even) {
+    border-bottom: 0;
+    background-color: #ffffff !important;
+   }
+}
+
 /* tables */
 table {
 	max-width: 100% !important;
@@ -2005,6 +2023,13 @@ table.nocolor {
 
 .stacktable.large-only { display: table !important; }
 .stacktable.small-only { display: none !important; }
+@include breakpoint(small only) {
+table.stacktable {
+	tr {
+		background-color: #ffffff !important;
+	}
+}	
+}
 
 @media (max-width: 760px) {
   .stacktable.large-only { display: none !important; }
