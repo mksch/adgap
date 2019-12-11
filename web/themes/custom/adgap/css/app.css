@@ -5554,7 +5554,7 @@ header[role="banner"] .sticky {
   padding-bottom: 10px;
 }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 64em) {
   .utility-wrapper {
     float: right;
   }

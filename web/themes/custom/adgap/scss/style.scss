@@ -886,7 +886,7 @@ header[role="banner"] {
 .utility-wrapper {
 	float: left;
 	padding-bottom: 10px;
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		float: right;
 	}
 }
