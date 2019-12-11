@@ -5338,7 +5338,6 @@ ul.links-list li a:hover::before {
   transform: translate(3px, 0);
 }
 
-ul.menu a.externalLink,
 ul.links-list a.externalLink,
 ul.ref-list a.externalLink {
   float: left;
@@ -5346,7 +5345,6 @@ ul.ref-list a.externalLink {
   padding-right: 15px;
 }
 
-ul.menu a.externalLink:after,
 ul.links-list a.externalLink:after,
 ul.ref-list a.externalLink:after {
   color: #d35e13;
@@ -5356,11 +5354,6 @@ ul.ref-list a.externalLink:after {
   font-size: 1.1rem;
   content: "\f08e";
   font-weight: bold;
-}
-
-ul.menu a.externalLink {
-  width: auto;
-  float: none;
 }
 
 /*

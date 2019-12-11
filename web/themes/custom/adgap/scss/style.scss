@@ -692,7 +692,6 @@ ul.links-list {
 	}
 }
 	
-ul.menu,
 ul.links-list,
 ul.ref-list {
 // 	a.externalLink:not([href$=".pdf"]) {
@@ -711,10 +710,7 @@ ul.ref-list {
 	  }
 	} 	
 }
-ul.menu a.externalLink {
-	width: auto;
-	float: none;
-}
+
 /*
 .col-back-blue ul.links-list li a::before,
 .back-blue ul.links-list li a::before {
