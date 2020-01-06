@@ -691,7 +691,8 @@ ul.links-list {
 
 	}
 }
-	
+.sitemap-nav ul,
+.main-menu-wrapper ul,	
 ul.links-list,
 ul.ref-list {
 // 	a.externalLink:not([href$=".pdf"]) {
@@ -710,7 +711,11 @@ ul.ref-list {
 	  }
 	} 	
 }
-
+.sitemap-nav ul a.externalLink,
+.main-menu-wrapper ul a.externalLink{
+	width: auto;
+	float: none;
+}
 /*
 .col-back-blue ul.links-list li a::before,
 .back-blue ul.links-list li a::before {
@@ -1327,9 +1332,11 @@ ul.ags-site-logos {
 				padding: 0;
 				margin: 0;
 				color: $font-color;
-			&:hover {
-				color: $orange;
-			}
+				line-height: normal;
+				padding: 3px 0px;
+				&:hover {
+					color: $orange;
+				}
 			}
 		}
 	}

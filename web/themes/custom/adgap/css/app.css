@@ -5338,6 +5338,8 @@ ul.links-list li a:hover::before {
   transform: translate(3px, 0);
 }
 
+.sitemap-nav ul a.externalLink,
+.main-menu-wrapper ul a.externalLink,
 ul.links-list a.externalLink,
 ul.ref-list a.externalLink {
   float: left;
@@ -5345,6 +5347,8 @@ ul.ref-list a.externalLink {
   padding-right: 15px;
 }
 
+.sitemap-nav ul a.externalLink:after,
+.main-menu-wrapper ul a.externalLink:after,
 ul.links-list a.externalLink:after,
 ul.ref-list a.externalLink:after {
   color: #d35e13;
@@ -5354,6 +5358,12 @@ ul.ref-list a.externalLink:after {
   font-size: 1.1rem;
   content: "\f08e";
   font-weight: bold;
+}
+
+.sitemap-nav ul a.externalLink,
+.main-menu-wrapper ul a.externalLink {
+  width: auto;
+  float: none;
 }
 
 /*
@@ -6131,6 +6141,8 @@ ul.ags-site-logos li a {
   padding: 0;
   margin: 0;
   color: #222222;
+  line-height: normal;
+  padding: 3px 0px;
 }
 
 .sitemap-nav ul li a:hover {
