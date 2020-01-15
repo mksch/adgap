@@ -5340,6 +5340,7 @@ ul.links-list li a:hover::before {
 
 .sitemap-nav ul a.externalLink,
 .main-menu-wrapper ul a.externalLink,
+.breadcrumb-dropdown ul a.externalLink,
 ul.links-list a.externalLink,
 ul.ref-list a.externalLink {
   float: left;
@@ -5349,6 +5350,7 @@ ul.ref-list a.externalLink {
 
 .sitemap-nav ul a.externalLink:after,
 .main-menu-wrapper ul a.externalLink:after,
+.breadcrumb-dropdown ul a.externalLink:after,
 ul.links-list a.externalLink:after,
 ul.ref-list a.externalLink:after {
   color: #d35e13;
