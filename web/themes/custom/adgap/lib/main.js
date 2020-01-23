@@ -143,7 +143,9 @@ function initSettings() {
 
   /* find the mediaquery size */	
 	$('body').attr('data-media', Foundation.MediaQuery.current);
-
+	if (Foundation.MediaQuery.current == 'small') {
+	  $('.sticky').removeAttr('data-sticky');
+	}
 
 }
 
