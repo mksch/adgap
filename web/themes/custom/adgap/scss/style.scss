@@ -850,6 +850,11 @@ header[role="banner"] {
 	 // height: 215px;		
 	}
 }
+@include breakpoint(small medium only) {
+	.is-at-bottom {
+		top: 0 !important;
+	}
+}
 .node-preview-container {
 	background-color: $orange;
 	.form-item-view-mode {
@@ -1470,13 +1475,14 @@ footer .sitemap-nav ul li {
 	}
 }
 
-
+.owl-item {
+	background-color: $blue-light !important;
+}
 .slide-text-wrapper {
 	height: 100%;
 	width: 50%;
 	float: left;
 	min-height: 0;
-	background-color: $blue-light !important;
 	color: $teal;
 	font-weight: bold;
 	font-size: 1.2rem;
@@ -1515,18 +1521,24 @@ footer .sitemap-nav ul li {
 		width: 100%;
 		float: left;
 		border-bottom: 1px solid darken($light-grey, 10%);
-		min-height: 280px;
+		min-height: 320px;
+		height:auto;
 	}
 	.slide-image {
 		width: 100%;
 	}
 	.slide-text {
-/* 		@include vertical-center(); */
+		font-weight: normal;
 	}
 }
 /* medium and up, unless they are overridden by large below */
 
 @include breakpoint(medium) {
+	.slide-text-wrapper {
+		min-height: 380px !important;
+		font-weight: normal;
+		height:auto;
+	}
 	.slide-text {
 		padding: 10px 30px;
 		font-size: 1.3rem;
@@ -1939,6 +1951,7 @@ table td {
  p:last-child {
 	 margin-bottom: 0;
  }
+ word-break: break-word;
 }
 table thead th {
 	border: 1px solid $grey !important;

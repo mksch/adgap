@@ -5502,6 +5502,10 @@ header[role="banner"] .sticky {
   background-color: #FFFFFF;
 }
 
+.is-at-bottom {
+  top: 0 !important;
+}
+
 .node-preview-container {
   background-color: #d35e13;
 }
@@ -6361,12 +6365,15 @@ footer .sitemap-nav ul li {
   margin: 5px 0px !important;
 }
 
+.owl-item {
+  background-color: #deedf9 !important;
+}
+
 .slide-text-wrapper {
   height: 100%;
   width: 50%;
   float: left;
   min-height: 0;
-  background-color: #deedf9 !important;
   color: #006072;
   font-weight: bold;
   font-size: 1.2rem;
@@ -6411,18 +6418,24 @@ footer .sitemap-nav ul li {
     width: 100%;
     float: left;
     border-bottom: 1px solid gainsboro;
-    min-height: 280px;
+    min-height: 320px;
+    height: auto;
   }
   .slide-image {
     width: 100%;
   }
   .slide-text {
-    /* 		@include vertical-center(); */
+    font-weight: normal;
   }
 }
 
 /* medium and up, unless they are overridden by large below */
 @media print, screen and (min-width: 40em) {
+  .slide-text-wrapper {
+    min-height: 380px !important;
+    font-weight: normal;
+    height: auto;
+  }
   .slide-text {
     padding: 10px 30px;
     font-size: 1.3rem;
@@ -6917,6 +6930,7 @@ table tbody, table tfoot {
 table td {
   border: 1px solid #CECECE !important;
   padding: 1rem .4rem !important;
+  word-break: break-word;
 }
 
 table td p:last-child {

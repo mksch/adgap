@@ -143,6 +143,10 @@ function initSettings() {
 
   /* find the mediaquery size */	
 	$('body').attr('data-media', Foundation.MediaQuery.current);
+	
+	/* make sure to remove data-sticky (Foundation sticky tag), 
+	*  it caused a bug with the header showing at the bottom of the site on some mobile devices
+	*/
 	if (Foundation.MediaQuery.current == 'small') {
 	  $('.sticky').removeAttr('data-sticky');
 	}
