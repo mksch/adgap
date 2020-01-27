@@ -1535,13 +1535,13 @@ footer .sitemap-nav ul li {
 
 @include breakpoint(medium) {
 	.slide-text-wrapper {
-		min-height: 380px !important;
-		font-weight: normal;
-		height:auto;
+// 		min-height: 380px !important;
+//		height:auto;
 	}
 	.slide-text {
 		padding: 10px 30px;
 		font-size: 1.3rem;
+		float: left;
 	}
 	.owl-nav {
 		width: 100%;
