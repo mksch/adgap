@@ -13,7 +13,7 @@ global-js:
     js/owlcarousel/owl.carousel.min.js: {}
     bower_components/foundation-sites/dist/js/foundation.min.js: {}
     js/jquery.hoverintent.js: {}
-    lib/main.js: {}
+    js/min/main.js: {}
     lib/stacktable/stacktable.js: {}
     js/tracking.js: {preprocess: false}
   dependencies: 
