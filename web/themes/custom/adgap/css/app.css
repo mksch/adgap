@@ -9228,11 +9228,15 @@ div[role=alert] ul {
   ul.square-bullet-list {
     list-style-type: square !important;
   }
-  .adgap-form ul li::before,
+  .adgap-form ul a::before, .adgap-form ul li::before,
+  #block-adgap-content ul a::before,
   #block-adgap-content ul li::before,
+  .ac-content ul a::before,
   .ac-content ul li::before,
+  ul.square-bullet-list a::before,
   ul.square-bullet-list li::before {
     background-color: transparent;
+    content: "";
   }
   ul.links-list {
     list-style-type: none !important;

@@ -33,8 +33,9 @@
 	.ac-content ul,
 	ul.square-bullet-list {
 		list-style-type: square !important;
-		li::before {
+		a::before,li::before {
 			background-color: transparent;
+			content: "";
 		}
 	}
 	ul.links-list {
