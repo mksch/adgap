@@ -26,7 +26,11 @@ class SettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('simple_gse_search.settings');
     $url = \Drupal\Core\Url::fromUri('https://www.google.com/cse');
-    $cse_link = \Drupal::l(t('https://www.google.com/cse'), $url);
+    //$cse_link = \Drupal::l(t('https://www.google.com/cse'), $url);
+    /*
+	   * for Drupal 9.0 compatability
+	   */
+    $cse_link =  \Drupal\Core\Link::fromTextAndUrl(t('https://www.google.com/cse'), $url)->toString(); 
     $form['cx'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Google Custom Search Engine ID'),

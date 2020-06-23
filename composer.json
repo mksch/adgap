@@ -72,6 +72,7 @@
         "drupal/pathauto": "^1.4",
         "drupal/redirect": "^1.5",
         "drupal/token": "^1.5",
+        "drupal/upgrade_status": "^2.0",
         "drush/drush": "^9.0.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
