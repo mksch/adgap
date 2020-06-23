@@ -59,11 +59,19 @@ div.gsc-webResult.gsc-result {
 }
 
 
-.gsc-result .gs-title {
+.gsc-result {
+	.gs-title {
 	height: auto !important;
 	float: left;
 	padding: 4px 0px;
 	width: 100%;
+	display: block;
+	float: left;
+	clear:both;
+	}
+	.gs-fileFormat {
+		clear: both;
+	}
 }
 .gsc-result .gs-title a {
 	text-decoration: none !important;
@@ -77,18 +85,21 @@ display: none !important;
 .gsc-url-bottom {
 display: block !important;
 }
-.gs-title {
-	padding-top: 15px !important;
-}
+
 /* specialized, result type specific, fine grained controls */
 .gsc-result div.gs-watermark {
 	display: none;
 }
-
+.gs-image[href$=".pdf"]:after {
+	content: '';
+	width: 0;
+	height: 0;
+	display: none;
+}
 /* show the tab from where this result came */
 
 div.gs-webResult.gs-result {
-	padding: 0px 10px;
+	padding: 10px 10px;
 }
 .gs-per-result-labels	span {
 		display: none;
@@ -99,6 +110,17 @@ div.gs-webResult.gs-result {
 		top: -10px;
 }
 /* By default show thumbnail at the left of the snippet */
+
+.gsc-table-cell-thumbnail {
+	min-width: 10%;
+	float: left;
+	margin-top: 0;
+	padding-top: 0;
+}
+.gsc-table-cell-snippet-close {
+	float: left;
+	max-width: 85%;
+}
 .gsc-thumbnail-left {
 display: block;
 }
@@ -118,6 +140,10 @@ display: none;
 	display: block;
 }
 
+.gsc-selected-option-container {
+	width: auto;
+	max-width: 100% !important;
+}
 .gs-visibleUrl-short {
 	display: none !important;
 }
@@ -194,13 +220,14 @@ display: none;
  * .gsc-tabData.gsc-tabdActive : the data area for the active tab
  * .gsc-tabData.gsc-tabdInactive : the data area for inactive tabs
  */
+.gsc-refinementsArea,
 .gsc-tabsArea {
   clear: both;
   margin-top: 6px;
   margin-bottom: 8px;
   border-bottom: none !important;
   }
-
+.gsc-refinementsArea .gs-spacer,
 .gsc-tabsArea .gs-spacer {
   font-size : 1px;
   margin-right : 0;
@@ -216,14 +243,14 @@ display: none;
 .gsc-refinementBlockInvisible {
   display : none;
   }
-
+.gsc-refinementHeader,
 .gsc-tabHeader {
   padding-left: 6px;
   padding-right: 6px;
   margin-right: 2px !important;
   margin-top: 2px;
   }
-
+.gsc-refinementhActive,
 .gsc-tabHeader.gsc-tabhActive {
 	border: none !important;
 	border-left: none !important;
@@ -231,17 +258,19 @@ display: none;
   color: black;
   color: #d35e13 !important;
   }
+.gsc-refinementHeader span:hover,
 .gsc-tabHeader span:hover {
   color: #d35E13 !important;
   }
+.gsc-refinementHeader:focus,  
 .gsc-tabHeader:focus {
   background-color: none !important;
   outline: none !important;
   }
-
+.gsc-refinementhInactive,
 .gsc-tabHeader.gsc-tabhInactive {
 	border: none !important;
-  color: #676767;
+  color: #676767 !important;
   cursor: pointer;
   }
 
