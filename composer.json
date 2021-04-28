@@ -43,7 +43,6 @@
 		    }
     ],
     "require": {
-        "php": ">=7.0.8",
         "ckeditor/div": "^4.10",
         "ckeditor/tabletoolstoolbar": "^0.0.1",
         "composer/installers": "^1.7",
@@ -81,8 +80,7 @@
     },
     "require-dev": {
         "drupal/core-dev": "^8.8",
-        "drupal/devel": "^2.1",
-        "drupal/kint": "^2.1"
+        "drupal/devel": "^4.1"
     },
     "conflict": {
         "drupal/drupal": "*"
