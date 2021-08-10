@@ -48,3 +48,4 @@ x *.twig
 /private_file_system/
 /web/themes/custom/adgap/templates/archives/
 /web/themes/custom/adgap/node_modules/
+/web/themes/custom/adgap/node_modules/
