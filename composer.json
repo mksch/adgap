@@ -60,7 +60,7 @@
         "drupal/editor_advanced_link": "^1.4",
         "drupal/entity_browser": "^2.2",
         "drupal/entity_embed": "^1.1",
-        "drupal/google_analytics": "^3.0",
+        "drupal/google_analytics": "^4.0",
         "drupal/google_cse": "^3.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/linkit": "^5.0@beta",
