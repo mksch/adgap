@@ -49,7 +49,7 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/addtoany": "^1.12",
-        "drupal/admin_toolbar": "^2.0",
+        "drupal/admin_toolbar": "^3.1",
         "drupal/backup_migrate": "^5.0",
         "drupal/block_field": "^1.0@alpha",
         "drupal/ckeditor_div_manager": "^2.0",
