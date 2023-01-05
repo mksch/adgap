@@ -63,7 +63,7 @@
         "drupal/google_analytics": "^4.0",
         "drupal/google_cse": "^3.0",
         "drupal/inline_entity_form": "^1.0@RC",
-        "drupal/linkit": "^5.0@beta",
+        "drupal/linkit": "^6.0",
         "drupal/menu_block": "^1.5",
         "drupal/metatag": "^1.10",
         "drupal/paragraphs": "^1.9",
