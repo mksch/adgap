@@ -4858,7 +4858,7 @@ ol.continue-numbers {
 ol.continue-numbers li:before {
     counter-increment: start;
     content: counter(start);
-	
+
 }
 */
 ul.menu {
@@ -5833,7 +5833,7 @@ ol.search-results {
   }
 }
 
-/* 
+/*
 	Footer
 */
 footer {
@@ -6034,6 +6034,9 @@ ul.ags-site-logos li:first-child {
 
 ul.ags-site-logos li a {
   display: inline-block;
+  max-width: 140px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .footeragslogo {
@@ -6085,7 +6088,7 @@ ul.ags-site-logos li a {
 		margin-top: 30px;
 		margin-bottom: 20px;
 	}
-		
+
 	}
 */
   /*
@@ -6211,8 +6214,8 @@ footer .sitemap-nav ul li {
   padding: 10px 0px;
 }
 
-/* 
- * HOME PAGE AREAS 
+/*
+ * HOME PAGE AREAS
  */
 /* SLIDES */
 .owl-carousel {
@@ -6806,7 +6809,7 @@ h2.disclosures {
   overflow: hidden;
 }
 
-/*** 
+/***
 * pagination
 ***/
 .pagination {
@@ -6969,7 +6972,7 @@ table tr.subhead td.st-val {
 
 /*
 * this is to start the striped after a dark grey subhead
-* with white. Start the striping count after the subhead, 
+* with white. Start the striping count after the subhead,
 * don't count the subhead as a stripe.
 */
 table tbody tr.subhead ~ tr:not(.subhead):nth-child(odd) {

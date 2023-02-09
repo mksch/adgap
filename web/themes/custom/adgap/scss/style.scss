@@ -125,7 +125,7 @@ a {
 
 .back-blue-mid,
 .col-back-blue-mid {
-	background-color: $blue-mid;	
+	background-color: $blue-mid;
 
 	> h1,h2,h3,h4,h5,h6 {
 		color: $white !important;
@@ -136,7 +136,7 @@ a {
 }
 .back-blue-light,
 .col-back-blue-light {
-	background-color: $blue-light;	
+	background-color: $blue-light;
 	p {
 		color: $font-color;
 	}
@@ -224,8 +224,8 @@ a {
 	float: left;
 	width: 100%;
 	@include breakpoint(medium) {
-// 		width: calc(100% - 160px);	
-		width: calc(100% - 220px);	
+// 		width: calc(100% - 160px);
+		width: calc(100% - 220px);
 	}
 }
 h1.home-title {
@@ -269,7 +269,7 @@ a[href$=".pdf"]{
 	  font-weight: 400;
 	  margin-left: .3rem;
 	  font-size: 1.1rem;
-	  content: "\f1c1";    
+	  content: "\f1c1";
   }
 }
 a[href$=".pps"]{
@@ -280,11 +280,11 @@ a[href$=".pps"]{
 	  font-weight: 400;
 	  margin-left: .3rem;
 	  font-size: 1.1rem;
-	  content: "\f1c4";    
+	  content: "\f1c4";
   }
 }
 
-	
+
 /*
 * MENUS
 */
@@ -342,7 +342,7 @@ ol.circles-list > li:before {
     left: -1.33em;
     width: 1.6em;
     height: 1.6em;
-     
+
     font-size: 1em;
     line-height: 1.6;
     text-align: center;
@@ -359,7 +359,7 @@ ol.continue-numbers {
 ol.continue-numbers li:before {
     counter-increment: start;
     content: counter(start);
-	
+
 }
 */
 ul.menu {
@@ -459,7 +459,7 @@ a.backlink {
 }
 .hero-text .backlink {
 	text-align: left;
-	  max-width: 400px;		
+	  max-width: 400px;
 }
 .text-align-right .backlink {
 	float: right;
@@ -525,7 +525,7 @@ a.backlink {
 	clear: both;
 	display: inline-block;
 	float: none;
-	border-left: 6px solid $orange;	
+	border-left: 6px solid $orange;
 	background-color: $light-grey;
 	&::after {
 		content: '';
@@ -549,7 +549,7 @@ a.backlink {
 .region-content ul,
 .ac-content ul,
 ul.square-bullet-list {
-		list-style-type: none;	
+		list-style-type: none;
 		position: relative;
 		padding-left: 0px;
 		@include breakpoint(medium) {
@@ -614,7 +614,7 @@ ul.ref-list {
 			 width: 60%;
 		}
 	}
-	
+
 	li:hover a {
 		text-decoration: underline;
 	}
@@ -626,10 +626,10 @@ ul.ref-list {
 		}
 		&::after {
 			position: absolute;
-			right: 0px;	
+			right: 0px;
 		}
 	}
-	
+
 } /* end ul.ref-list */
 
 
@@ -677,7 +677,7 @@ ul.links-list {
 		&::before {
 			display: inline-block;
 			font-family: FontAwesome;
-			content: '\f054';	
+			content: '\f054';
 			line-height: inherit;
 			margin-right: 5px;
 			position: absolute;
@@ -692,7 +692,7 @@ ul.links-list {
 	}
 }
 .sitemap-nav ul,
-.main-menu-wrapper ul,	
+.main-menu-wrapper ul,
 .breadcrumb-dropdown ul,
 ul.links-list,
 ul.ref-list {
@@ -707,10 +707,10 @@ ul.ref-list {
 	  font-weight: 400;
 	  padding-left: .3rem;
 	  font-size: 1.1rem;
-	  content: "\f08e";    
+	  content: "\f08e";
 	  font-weight:bold;
 	  }
-	} 	
+	}
 }
 .sitemap-nav ul a.externalLink,
 .main-menu-wrapper ul a.externalLink{
@@ -847,7 +847,7 @@ header[role="banner"] {
 	}
 	/* have to give it a height due to flashing when a sticky header */
 	@include breakpoint(large) {
-	 // height: 215px;		
+	 // height: 215px;
 	}
 }
 @include breakpoint(small medium only) {
@@ -861,11 +861,11 @@ header[role="banner"] {
 		display:none;
 	}
 	a {
-	@include button($blue, $white);		
+	@include button($blue, $white);
 	}
 }
-// can't have the header sticky in media center 
-// AJAX pager doesn't account for it and 
+// can't have the header sticky in media center
+// AJAX pager doesn't account for it and
 // doesn't scroll page content to top
 .path-webform .sticky,
 .path-media-center .sticky {
@@ -882,7 +882,7 @@ header[role="banner"] {
 		float: left;
 	}
 	@include breakpoint(small only) {
-	  padding-bottom: 10px;		
+	  padding-bottom: 10px;
 	}
 }
 .site-logo img {
@@ -987,7 +987,7 @@ header[role="banner"] {
 	clear: both;
 	float: none;
 	position: relative;
-	
+
 	.form-submit {
 		width: 50px;
 		height: 50px;
@@ -1091,7 +1091,7 @@ ol.search-results {
 }
 .local-search-results {
   @include breakpoint(small only) {
-	padding-left: 0px;	  
+	padding-left: 0px;
 	margin-left: 0px;
   }
 }
@@ -1106,7 +1106,7 @@ ol.search-results {
 	}
 }
 
-/* 
+/*
 	Footer
 */
 
@@ -1229,7 +1229,7 @@ ul.ags-site-logos {
 		display: inline;
 		padding: 0px 20px;
 		@include breakpoint(small only) {
-			display: block;	
+			display: block;
 		}
 	}
 	li:last-child {
@@ -1240,6 +1240,9 @@ ul.ags-site-logos {
 	}
 	li a {
 		display: inline-block;
+		max-width: 140px;
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 }
 
@@ -1254,7 +1257,7 @@ ul.ags-site-logos {
 	padding-top: 40px;
 	color: $font-color;
 	@include breakpoint(small only) {
-		padding-left: 20px;		
+		padding-left: 20px;
 	}
 	.footer-left {
 		margin-bottom: 30px;
@@ -1285,7 +1288,7 @@ ul.ags-site-logos {
 		margin-top: 30px;
 		margin-bottom: 20px;
 	}
-		
+
 	}
 */
 	nav {
@@ -1357,8 +1360,8 @@ footer #block-quicklinks {
 			line-height: normal;
 		}
 		a {
-			font-size: 1rem;	
-			padding-left: .5rem;		
+			font-size: 1rem;
+			padding-left: .5rem;
 		}
 	}
 }
@@ -1399,12 +1402,12 @@ footer .sitemap-nav ul li {
 
 
 
-/* 
- * HOME PAGE AREAS 
+/*
+ * HOME PAGE AREAS
  */
 
 /* SLIDES */
-	
+
 .owl-carousel {
 	clear: both;
 }
@@ -1434,7 +1437,7 @@ footer .sitemap-nav ul li {
 			margin-bottom: 0;
 		}
 	}
-}	
+}
 
 /* slide learn more buttons */
 
@@ -1456,7 +1459,7 @@ footer .sitemap-nav ul li {
 .owl-theme {
 	.owl-nav {
 		position: absolute;
-		.owl-next, 
+		.owl-next,
 		.owl-prev {
 		  position: absolute;
 		  background: none !important;
@@ -1465,7 +1468,7 @@ footer .sitemap-nav ul li {
 		  &:hover {
 			  color: lighten($teal, 10%) !important;
 		  }
-		} 
+		}
 	}
   .owl-dots {
 	  position: absolute;
@@ -1562,7 +1565,7 @@ footer .sitemap-nav ul li {
 	}
   .s-more-button {
 	  margin-top: 10px;
-  }	
+  }
 	.slide-text-wrapper {
 		position: absolute;
 		top: 0;
@@ -1628,9 +1631,9 @@ footer .sitemap-nav ul li {
 	margin: 0 auto;
 	padding: 0px 20px;
 	img {
-		border: 1px solid $blue; 
+		border: 1px solid $blue;
 		padding:5px;
-		
+
 	}
 	h3 {
 		margin-top: 10px;
@@ -1662,7 +1665,7 @@ footer .sitemap-nav ul li {
 /*
  * back-top: the button displayed to scroll back to top of page.
  */
- 
+
 
 #back-top {
     position:fixed;
@@ -1718,7 +1721,7 @@ footer .sitemap-nav ul li {
 	@include breakpoint(large){
 		margin-top: 0px;
 		margin-bottom: 20px;
-	}	
+	}
 		&::before {
 			content: 'Print';
 			position: absolute;
@@ -1750,8 +1753,8 @@ footer .sitemap-nav ul li {
 			left: 4px;
 		  font-family: FontAwesome;
 		  font-weight: 400;
-		  content: "\f02f"; 
-	  }  
+		  content: "\f02f";
+	  }
 	  &:hover::before {
 		  color: $orange;
 	  }
@@ -1805,7 +1808,7 @@ ol.search-results {
 }
 .local-search-results {
   @include breakpoint(small only) {
-	padding-left: 0px;	  
+	padding-left: 0px;
 	margin-left: 0px;
   }
 }
@@ -1874,7 +1877,7 @@ h2.disclosures {
 	}
 }
 
-/*** 
+/***
 * pagination
 ***/
 
@@ -1899,7 +1902,7 @@ h2.disclosures {
 }
 .pagination a {
  }
- 
+
 
 
 /****
@@ -1984,7 +1987,7 @@ table tr.subhead {
 
 /*
 * this is to start the striped after a dark grey subhead
-* with white. Start the striping count after the subhead, 
+* with white. Start the striping count after the subhead,
 * don't count the subhead as a stripe.
 */
 
@@ -2018,7 +2021,7 @@ table {
 		color: transparent !important;
 		&::before {
 			content: "\f00C"; // check
-			content: "\f14a"; // square check 
+			content: "\f14a"; // square check
 		font-size: 1.5rem; // if using square check
 			display: block;
 			position: absolute;
@@ -2034,13 +2037,13 @@ table {
 table.nocolor {
 	tr {
 		background-color: $white !important;
-	} 
+	}
 }
-	
+
 
 /*
 * Stackable/Responsive tables styles
-*/	
+*/
 
 .stacktable.large-only { display: table !important; }
 .stacktable.small-only { display: none !important; }
@@ -2049,14 +2052,14 @@ table.stacktable {
 	tr {
 		background-color: #ffffff !important;
 	}
-}	
+}
 }
 
 @media (max-width: 760px) {
   .stacktable.large-only { display: none !important; }
 
-  .stacktable.small-only { 
-	  display: table !important; 
+  .stacktable.small-only {
+	  display: table !important;
 	  	width: 100%;
 		table-layout: fixed;
 		.st-key { width: 30%;}
@@ -2170,7 +2173,7 @@ iframe {
 		font-size: 1.5rem;
 		overflow-wrap: break-word;
 		  hyphens: auto;
-	}	
+	}
 }
 .links-block {
 /*
@@ -2208,7 +2211,7 @@ iframe {
 			background-color: $white;
 		}
 		&.externalLink::before {
-				  content: "\f08e"; 
+				  content: "\f08e";
 		}
 	}
 	p {
