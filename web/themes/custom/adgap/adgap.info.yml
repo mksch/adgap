@@ -1,7 +1,7 @@
 name: adgap
 description: Theme for ADGAP - American Geriatrics Society
 type: theme
-base theme: stable
+base theme: false
 core: 8.x
 core_version_requirement: ^8 || ^9
 
