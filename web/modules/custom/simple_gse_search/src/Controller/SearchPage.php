@@ -2,36 +2,54 @@
 
 namespace Drupal\simple_gse_search\Controller;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Defines a controller for displaying search results from Google CSE.
+ */
 class SearchPage extends ControllerBase {
+
+  /**
+   * Configuration.
+   *
+   * @var \Drupal\Core\Config\Config
+   */
   protected $searchConfig;
 
-  public function __construct($config) {
+  /**
+   * Constructs a new SearchPage object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config
+   *   Config factory.
+   */
+  public function __construct(ConfigFactoryInterface $config) {
     $this->searchConfig = $config->get('simple_gse_search.settings');
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public static function create(ContainerInterface $containerInterface) {
-    $config = $containerInterface->get('config.factory');
-    return new static($config);
+    return new static(
+      $containerInterface->get('config.factory')
+    );
   }
 
   /**
    * Function responsible for returning the search results page.
    */
-  function displaySearchResults() {
+  public function displaySearchResults() {
     // Display the results returned by Google.
     return [
-	    '#title' => isset($_GET['s']) && $_GET['s'] != "" ? 'Search for "'. $_GET['s'] . '"' : 'Search',
       '#type' => 'html_tag',
       '#tag' => 'gcse:searchresults-only',
       '#attributes' => [
         'queryParameterName' => "s",
         'linktarget' => '_parent'
       ],
-      // MKS: only display status if there is a search going on
-      '#value' => isset($_GET['s']) && $_GET['s'] != "" ? 'Searching for "'. $_GET['s'] . '" ...' : '',
+      '#value' => 'Please make sure javascript is enabled to see the search results.',
       '#attached' => [
         'library' => ['simple_gse_search/search'],
         'drupalSettings' => [
@@ -42,4 +60,5 @@ class SearchPage extends ControllerBase {
       ],
     ];
   }
+
 }

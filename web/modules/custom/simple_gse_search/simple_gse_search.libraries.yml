@@ -3,5 +3,5 @@ search:
   js:
     js/simple_gse_search.js: {}
   dependencies:
-   - core/jquery
-   - core/drupal 
+    - core/jquery
+    - core/drupalSettings

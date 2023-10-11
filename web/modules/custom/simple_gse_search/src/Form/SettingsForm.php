@@ -5,7 +5,11 @@ namespace Drupal\simple_gse_search\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
+/**
+ * Defines a settings form for administering Simple CSE search.
+ */
 class SettingsForm extends ConfigFormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -25,16 +29,12 @@ class SettingsForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('simple_gse_search.settings');
-    $url = \Drupal\Core\Url::fromUri('https://www.google.com/cse');
-    //$cse_link = \Drupal::l(t('https://www.google.com/cse'), $url);
-    /*
-	   * for Drupal 9.0 compatability
-	   */
-    $cse_link =  \Drupal\Core\Link::fromTextAndUrl(t('https://www.google.com/cse'), $url)->toString(); 
     $form['cx'] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Google Custom Search Engine ID'),
-      '#description' => $this->t('Get your custom search engine ID from %search_engine', ['%search_engine' => $cse_link]),
+      '#description' => $this->t('Get your custom search engine ID from <a href=":url" target="_blank">https://www.google.com/cse</a>.', [
+        ':url' => 'https://www.google.com/cse',
+      ]),
       '#default_value' => $config->get('cx'),
     );
     return parent::buildForm($form, $form_state);
@@ -44,10 +44,9 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $values = $form_state->getValues();
     $gse_settings = $this->config('simple_gse_search.settings');
 
-    $gse_settings->set('cx', $values['cx'])
+    $gse_settings->set('cx', $form_state->getValue('cx'))
       ->save();
 
     parent::submitForm($form, $form_state);

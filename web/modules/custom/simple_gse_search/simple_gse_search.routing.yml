@@ -10,6 +10,6 @@ simple_gse_search.search_page:
   path: '/search'
   defaults:
     _controller: '\Drupal\simple_gse_search\Controller\SearchPage::displaySearchResults'
-    _title: 'Search'
+    _title: 'Search results'
   requirements:
     _permission: 'access gse search page'
