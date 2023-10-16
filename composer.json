@@ -44,7 +44,6 @@
 
     ],
     "require": {
-        "ckeditor/div": "^4.10",
         "ckeditor/tabletoolstoolbar": "^0.0.1",
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
@@ -70,6 +69,7 @@
         "drupal/pathauto": "^1.4",
         "drupal/redirect": "^1.5",
         "drupal/token": "^1.5",
+        "drupal/views_bulk_operations": "^4.1",
         "drush/drush": "^10.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
