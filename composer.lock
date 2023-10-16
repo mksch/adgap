@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7826b7a1b96544ef941005e8b2db88c2",
+    "content-hash": "6d66ce468ec89fdd37f4f946b339a7d7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -113,6 +113,18 @@
                 "source": "https://github.com/Chi-teck/drupal-code-generator/tree/1.33.1"
             },
             "time": "2020-12-05T05:59:11+00:00"
+        },
+        {
+            "name": "ckeditor/div",
+            "version": "4.10.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://download.ckeditor.com/div/releases/div_4.10.1.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "ckeditor/plugins/div"
+            }
         },
         {
             "name": "ckeditor/tabletoolstoolbar",
