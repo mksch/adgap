@@ -21,6 +21,23 @@ gulp.task('sass', function() {
     }))
     .pipe(gulp.dest('css'));
 });
+gulp.task("editorsass", function () {
+  return gulp
+    .src("scss/ck-app.scss")
+    .pipe(
+      $.sass({
+        includePaths: sassPaths,
+        outputStyle: "compressed", // if css compressed **file size**
+        //outputStyle: 'expanded' // if css compressed **file size**
+      }).on("error", $.sass.logError)
+    )
+    .pipe(
+      $.autoprefixer({
+        browsers: ["last 2 versions", "ie >= 9"],
+      })
+    )
+    .pipe(gulp.dest("css"));
+});
 
 gulp.task('headersass', function() {
   return gulp.src('scss/headeronly.scss')
@@ -61,6 +78,6 @@ gulp.task('scripts', function() {
 
 gulp.task('default', ['sass'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
-  //gulp.watch(['scss/**/*.scss'], ['headersass']);
+  gulp.watch(['scss/**/*.scss'], ['editorsass']);
  //gulp.watch(['scss/**/*.scss'], ['skeletonsass']);
 });

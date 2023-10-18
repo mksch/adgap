@@ -11,6 +11,9 @@ libraries:
 ckeditor_stylesheets:
 - lib/font-awesome/css/font-awesome.min.css
 - css/app.css
+ckeditor5-stylesheets:
+- lib/font-awesome/css/font-awesome.min.css
+- css/ck-app.css
 
 regions:
   header: 'Header'

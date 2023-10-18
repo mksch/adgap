@@ -28,34 +28,20 @@
 				      "type": "zip"
 				    }
 				  }
-				},
-		    {
-		        "type": "package",
-		        "package": {
-		            "name": "ckeditor/tabletoolstoolbar",
-		            "version": "0.0.1",
-		            "type": "drupal-library",
-		            "dist": {
-		                "url": "https://download.ckeditor.com/tabletoolstoolbar/releases/tabletoolstoolbar_0.0.1.zip",
-		                "type": "zip"
-		            }
-		        }
-		    }
-
+				}
     ],
     "require": {
         "ckeditor/div": "^4.10",
-        "ckeditor/tabletoolstoolbar": "^0.0.1",
-        "composer/installers": "^1.9",
+        "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/addtoany": "^2.0",
         "drupal/admin_toolbar": "^3.1",
         "drupal/backup_migrate": "^5.0",
         "drupal/block_field": "^1.0@alpha",
+        "drupal/ckeditor": "^1.0",
         "drupal/ckeditor_div_manager": "^2.0",
-        "drupal/ckeditor_tabletoolstoolbar": "^2.0@RC",
-        "drupal/core-composer-scaffold": "^9.0",
-        "drupal/core-recommended": "^9.0",
+        "drupal/core-composer-scaffold": "^10.0",
+        "drupal/core-recommended": "^10.0",
         "drupal/ctools": "^3.2",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/entity_browser": "^2.2",
@@ -71,14 +57,14 @@
         "drupal/redirect": "^1.5",
         "drupal/token": "^1.5",
         "drupal/views_bulk_operations": "^4.1",
-        "drush/drush": "^10.0",
+        "drush/drush": "^12.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.0",
+        "drupal/core-dev": "^10.0",
         "drupal/devel": "^5.1",
         "drupal/upgrade_status": "^4.0"
     },
@@ -95,7 +81,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "zaporylie/composer-drupal-optimizations": true
+            "zaporylie/composer-drupal-optimizations": true,
+            "phpstan/extension-installer": true
         }
     },
     "autoload": {
