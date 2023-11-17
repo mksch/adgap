@@ -5048,6 +5048,7 @@ a.backlink:hover::after {
 .hbox-orange,
 .hbox-grey,
 .hbox-clear,
+.back-highlight,
 .hbox-bordered {
   padding: 15px 20px;
   background-color: #e8e8e8;
@@ -5083,6 +5084,12 @@ a.backlink:hover::after {
 .hbox-clear h4,
 .hbox-clear h5,
 .hbox-clear a,
+.back-highlight h1,
+.back-highlight h2,
+.back-highlight h3,
+.back-highlight h4,
+.back-highlight h5,
+.back-highlight a,
 .hbox-bordered h1,
 .hbox-bordered h2,
 .hbox-bordered h3,
@@ -5094,6 +5101,7 @@ a.backlink:hover::after {
 
 .press-release .hbox, .press-release .hbox-blue,
 .callout,
+.back-highlight,
 .hbox-bordered {
   clear: both;
   display: inline-block;
@@ -5104,6 +5112,7 @@ a.backlink:hover::after {
 
 .press-release .hbox::after, .press-release .hbox-blue::after,
 .callout::after,
+.back-highlight::after,
 .hbox-bordered::after {
   content: '';
   display: block;

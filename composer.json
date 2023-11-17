@@ -13,25 +13,9 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-				{
-				  "type": "package",
-				  "package": {
-				    "name": "ckeditor/div",
-				    "version": "4.10.1",
-				    "type": "drupal-library",
-				    "extra": {
-				      "installer-name": "ckeditor/plugins/div"
-				    },
-				    "dist": {
-				      "url": "https://download.ckeditor.com/div/releases/div_4.10.1.zip",
-				      "type": "zip"
-				    }
-				  }
-				}
+        }
     ],
     "require": {
-        "ckeditor/div": "^4.10",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/addtoany": "^2.0",
@@ -39,13 +23,12 @@
         "drupal/backup_migrate": "^5.0",
         "drupal/block_field": "^1.0@alpha",
         "drupal/ckeditor": "^1.0",
-        "drupal/ckeditor_div_manager": "^2.0",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-recommended": "^10.0",
         "drupal/ctools": "^3.2",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/entity_browser": "^2.2",
-        "drupal/entity_embed": "^1.1",
+        "drupal/entity_embed": "^1.5",
         "drupal/google_analytics": "^4.0",
         "drupal/google_cse": "^3.0",
         "drupal/inline_entity_form": "^1.0@RC",

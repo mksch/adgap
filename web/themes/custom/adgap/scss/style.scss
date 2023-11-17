@@ -506,6 +506,7 @@ a.backlink {
 .hbox-orange,
 .hbox-grey,
 .hbox-clear,
+.back-highlight,
 .hbox-bordered {
 	padding: 15px 20px;
 	background-color: $mid-grey;
@@ -521,6 +522,7 @@ a.backlink {
 
 .press-release .hbox,
 .callout,
+.back-highlight,
 .hbox-bordered {
 	clear: both;
 	display: inline-block;
