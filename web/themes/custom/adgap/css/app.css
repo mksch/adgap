@@ -7273,6 +7273,13 @@ iframe {
   margin-top: 30px;
 }
 
+/*
+* Media formattings
+*/
+.region-content article.media.align-center {
+  display: table;
+}
+
 /**
 	PARAGRAPH STYLES for drupal HIA site
 **/
