@@ -67,7 +67,8 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "zaporylie/composer-drupal-optimizations": true,
             "phpstan/extension-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "tbachert/spi": true
         }
     },
     "autoload": {
