@@ -34,7 +34,7 @@
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/linkit": "^6.0",
         "drupal/menu_block": "^1.5",
-        "drupal/metatag": "^1.10",
+        "drupal/metatag": "^2.1",
         "drupal/paragraphs": "^1.9",
         "drupal/pathauto": "^1.4",
         "drupal/rebuild_cache_access": "^1.11",

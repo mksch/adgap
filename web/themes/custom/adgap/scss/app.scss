@@ -2,10 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Open+Sans:400,400i,600,600i,700,700i,800|Roboto:300i,400,500,500i,700,700i');
 @import 'settings';
-@import 'foundation';
-@import 'motion-ui';
-@import 'util/mixins';
-
+@import '../bower_components/foundation-sites/scss/foundation';
+//@import 'motion-ui';
+@import '../bower_components/foundation-sites/scss/util/mixins';
 /*
 * Zurb Foundation styles we'll use
 */
@@ -22,7 +21,7 @@
 //@include foundation-badge;
 @include foundation-breadcrumbs;
 //@include foundation-button-group;
-@include foundation-callout;
+//@include foundation-callout;
 //@include foundation-close-button;
 //@include foundation-menu;
 @include foundation-menu-icon;
@@ -31,8 +30,8 @@
 //@include foundation-dropdown-menu;
 //@include foundation-flex-video;
 @include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
+//@include foundation-media-object;
+//@include foundation-off-canvas;
 //@include foundation-orbit;
 @include foundation-pagination;
 //@include foundation-progress-bar;
@@ -52,10 +51,10 @@
 @include foundation-float-classes;
 // @include foundation-flex-classes;
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+//@include motion-ui-transitions;
+//include motion-ui-animations;
 
-// AGS-HIA specific styles 
+// AGS-HIA specific styles
 
 @import '_mixins';
 @import '_globals';
